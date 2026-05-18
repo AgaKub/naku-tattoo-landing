@@ -23,33 +23,61 @@ main {
     position: relative;
 }
 
-.dragon-line {
+.hero-designs {
     position: absolute;
-    width: 320px;
-    height: 320px;
-    top: -155px;
-    right: -135px;
-    color: #c7a27c;
-    opacity: 0.13;
-    z-index: 0;
-    animation: dragon-breathe 7s ease-in-out infinite;
+    inset: 0;
+    overflow: visible;
     pointer-events: none;
+    z-index: 0;
 }
 
-.hero > *:not(.dragon-line) {
+.hero-design {
+    position: absolute;
+    width: 150px;
+    opacity: 0;
+    filter: sepia(0.25);
+    animation: design-appear 9.0s ease-in-out infinite;
+}
+
+.hero-design-one {
+    top: -95px;
+    right: -5px;
+    animation-delay: -1.8s;
+}
+
+.hero-design-two {
+    top: 42%;
+    left: -35px;
+    width: 165px;
+    animation-delay: 0.5s;
+}
+
+.hero-design-three {
+    bottom: -165px;
+    right: 110px;
+    width: 130px;
+    animation-delay: 4.5s;
+}
+
+.hero > *:not(.hero-designs) {
     position: relative;
     z-index: 1;
 }
 
-@keyframes dragon-breathe {
-    0%, 100% {
-        transform: translateY(0) scale(1);
-        opacity: 0.13;
+@keyframes design-appear {
+    0%, 18%, 100% {
+        opacity: 0;
+        transform: translateY(10px) scale(0.96);
     }
 
-    50% {
-        transform: translateY(-8px) scale(1.03);
-        opacity: 0.2;
+    24%, 58% {
+        opacity: 0.22;
+        transform: translateY(0) scale(1);
+    }
+
+    72% {
+        opacity: 0;
+        transform: translateY(-8px) scale(1.02);
     }
 }
 
