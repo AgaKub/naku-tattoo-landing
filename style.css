@@ -66,17 +66,48 @@ h1 span {
     color: #c7a27c;
 }
 
-@media (max-width: 600px) {
+.soft-invite {
+    margin-bottom: 0;
+    color: #7f6b72;
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 700;
+}
+
+/* MOBILE VIEW — styles for phones and small screens */
+@media (max-width: 768px) {
+    main {
+        align-items: flex-start;
+        padding: 130px 20px 20px;
+    }
+
+    .hero {
+        max-width: 100%;
+    }
+
+    .eyebrow {
+        margin-bottom: 14px;
+        font-size: 13px;
+    }
+
     h1 {
-        font-size: 34px;
+        margin-bottom: 18px;
+        font-size: 36px;
+        line-height: 1.05;
     }
 
     .hero-text {
+        margin-bottom: 28px;
         font-size: 17px;
+        line-height: 1.55;
     }
 
     .cta-button {
+        margin-top: 48px;
         width: 100%;
-        max-width: 320px;
+        max-width: 340px;
+        padding: 16px 22px;
+        font-size: 16px;
+        text-align: center;
     }
 }
