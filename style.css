@@ -196,4 +196,11 @@ h1 span {
     .booking-info p {
         font-size: 0.68rem;
     }
+
+    .booking-info a {
+        color: inherit;
+        text-decoration: underline;
+        text-underline-offset: 4px;
+        text-decoration-thickness: 1px;
+    }
 }
