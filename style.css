@@ -139,12 +139,51 @@ h1 span {
 /* MOBILE VIEW — styles for phones and small screens */
 @media (max-width: 768px) {
     main {
-        align-items: flex-start;
-        padding: 130px 20px 20px;
+        justify-content: flex-start;
+        padding-top: 90px;
     }
 
     .hero {
-        max-width: 100%;
+        min-height: auto;
+        padding-top: 70px;
+        padding-bottom: 80px;
+    }
+
+    
+
+    .booking-info {
+        margin-top: 26px;
+    }
+
+    .booking-info p {
+        font-size: 0.68rem;
+    }
+}
+
+.booking-info {
+    margin-top: 48px;
+    width: min(100%, 460px);
+    text-align: center;
+}
+
+.booking-info p {
+    margin: 0;
+    font-size: 0.72rem;
+    color: #9a7d88;
+    opacity: 0.58;
+    letter-spacing: 0.02em;
+}
+
+@media (max-width: 768px) {
+    main {
+        justify-content: flex-start;
+        padding-top: 40px;
+    }
+
+    .hero {
+        min-height: auto;
+        padding-top: 48px;
+        padding-bottom: 64px;
     }
 
     .eyebrow {
@@ -172,18 +211,12 @@ h1 span {
         font-size: 16px;
         text-align: center;
     }
-}
+    
+    .booking-info {
+        margin-top: 22px;
+    }
 
-.booking-info {
-    margin-top: 48px;
-    width: min(100%, 460px);
-    text-align: center;
-}
-
-.booking-info p {
-    margin: 0;
-    font-size: 0.72rem;
-    color: #9a7d88;
-    opacity: 0.58;
-    letter-spacing: 0.02em;
+    .booking-info p {
+        font-size: 0.68rem;
+    }
 }
