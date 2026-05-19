@@ -174,3 +174,15 @@ h1 span {
     }
 }
 
+.booking-info {
+    margin-top: 18px;
+    text-align: center;
+}
+
+.booking-info p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: #9a7d88;
+    opacity: 0.72;
+    letter-spacing: 0.02em;
+}
