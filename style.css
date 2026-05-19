@@ -174,16 +174,3 @@ h1 span {
     }
 }
 
-.booking-note {
-    position: absolute;
-    left: 28px;
-    right: 28px;
-    bottom: 28px;
-    display: flex;
-    justify-content: space-between;
-    gap: 16px;
-    font-size: 0.62rem;
-    color: #9a7d88;
-    opacity: 0.55;
-    letter-spacing: 0.02em;
-}
