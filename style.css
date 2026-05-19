@@ -136,30 +136,6 @@ h1 span {
     font-weight: 700;
 }
 
-/* MOBILE VIEW — styles for phones and small screens */
-@media (max-width: 768px) {
-    main {
-        justify-content: flex-start;
-        padding-top: 90px;
-    }
-
-    .hero {
-        min-height: auto;
-        padding-top: 70px;
-        padding-bottom: 80px;
-    }
-
-    
-
-    .booking-info {
-        margin-top: 26px;
-    }
-
-    .booking-info p {
-        font-size: 0.68rem;
-    }
-}
-
 .booking-info {
     margin-top: 48px;
     width: min(100%, 460px);
@@ -174,10 +150,11 @@ h1 span {
     letter-spacing: 0.02em;
 }
 
+/* MOBILE VIEW — styles for phones and small screens */
 @media (max-width: 768px) {
     main {
         justify-content: flex-start;
-        padding-top: 40px;
+        padding-top: 58px;
     }
 
     .hero {
@@ -211,7 +188,7 @@ h1 span {
         font-size: 16px;
         text-align: center;
     }
-    
+
     .booking-info {
         margin-top: 22px;
     }
