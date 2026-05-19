@@ -361,11 +361,11 @@ Review Nadia’s existing posts / designs and map them to locations:
 
 Continue mapping market language by city:
 
-| City | Words used by market | Visual code | Color code | Trust code |
+| City          | Words used by market | Visual code | Color code | Trust code |
 |---|---|---|---|---|
-| Stockholm | fine line, microrealism, black-grey | refined | neutral / black / controlled accent | quality, precision |
-| Gothenburg | custom, illustrative, fine line | creative | black-grey + selective color | personal process |
-| Helsinki | storybook, nature, creatures | soft / nostalgic | natural / muted / gentle | emotional fit |
+| Stockholm     | fine line, microrealism, black-grey | refined | neutral / black / controlled accent | quality, precision |
+| Gothenburg    | custom, illustrative, fine line | creative | black-grey + selective color | personal process |
+| Helsinki      | storybook, nature, creatures | soft / nostalgic | natural / muted / gentle | emotional fit |
 | Oslo | nature, meaningful, clean | calm | restrained | quality / safety |
 
 ---
