@@ -173,3 +173,11 @@ h1 span {
         text-align: center;
     }
 }
+
+.booking-note {
+    margin-top: 18px;
+    font-size: 0.85rem;
+    color: #9a7d88;
+    opacity: 0.78;
+    text-align: center;
+}
