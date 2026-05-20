@@ -190,7 +190,7 @@ h1 span {
     }
 
     .booking-info {
-        margin-top: 22px;
+        margin-top: 10px;
     }
 
     .booking-info p {
@@ -205,7 +205,7 @@ h1 span {
     }
 
     .guest-spot {
-        margin-top: 42px;
+        margin-top: 24px;
         text-align: center;
     }
 
@@ -223,7 +223,7 @@ h1 span {
     }
 
     .guest-spot-link {
-        color: inherit;
+        color: #8a737c;
         font-size: 0.68rem;
         text-decoration: underline;
         text-underline-offset: 4px;
