@@ -190,11 +190,12 @@ h1 span {
     }
 
     .booking-info {
-        margin-top: 10px;
+        margin-top: 0px;
     }
 
     .booking-info p {
-        font-size: 0.68rem;
+        color: #9b8790;
+        font-size: 0.66rem;
     }
 
     .booking-info a {
