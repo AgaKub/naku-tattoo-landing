@@ -160,7 +160,7 @@ h1 span {
     .hero {
         min-height: auto;
         padding-top: 48px;
-        padding-bottom: 64px;
+        padding-bottom: 32px;
     }
 
     .eyebrow {
