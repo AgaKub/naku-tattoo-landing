@@ -1,6 +1,51 @@
 # Naku Tattoo — Backlog
 
 
+
+## Guest spot dropdown should filter by location and show date/status
+
+Current issue:
+- Guest spot dropdown shows all guest spots regardless of selected preferred location.
+- Example: Gdańsk location can still show Lisbon dates.
+- Dropdown labels do not clearly show planned dates or status.
+
+Future fix:
+- Filter guest spot dates by selected location.
+- Show date range and status in the dropdown label.
+- Hide closed guest spots.
+- Make
+
+
+## Booking form validation clarity
+
+Current issue:
+- If the email is invalid, the form returns to the filled form.
+- On mobile, it is not obvious enough why submission failed.
+
+Future fix:
+- Show a clear visible error message near the email field and/or at the top of the form.
+- Example: “Please enter a valid email address, e.g. name@example.com.”
+
+Priority:
+Medium-high before real traffic.
+
+
+## Guest spot dropdown should filter by selected location
+
+Current issue:
+- The form shows all guest spot dates, even when a specific location is selected.
+- Example: client can choose Gdańsk as preferred location but still select Lisbon guest spot date.
+- This can confuse clients and Nadia may mismatch location/date, especially during admin review.
+
+Future fix:
+- When client selects a guest spot location, show only guest spot dates for that location.
+- Ideally, if only one matching date exists, show it as default or make the choice very clear.
+- Admin should see location + guest spot date in a way that prevents mismatch.
+
+Priority:
+High for Nadia admin clarity.
+
+
 ## Booking form hosting / trust issue
 
 The guest spot inquiry form is connected and opens correctly from the landing page.
