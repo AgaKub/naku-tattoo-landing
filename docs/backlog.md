@@ -53,3 +53,12 @@ The purpose is trust, local visibility, and discoverability.
 
 ### Rule
 One step at a time.
+
+Do backlogu / następnej poprawki UX
+
+Dodałabym to jako małą poprawkę wordingową:
+
+Teraz	Lepiej
+Which guest spot are you interested in?	Which guest spot date are you interested in?
+If you choose a guest spot location...	If you choose Gdańsk, please select the guest spot date you are interested in.
+
