@@ -1,24 +1,29 @@
 # Naku Tattoo — Backlog
 
-## Google visibility setup
 
-### Context
-Nadia / Naku Tattoo needs better visibility outside Instagram.
+## Booking form hosting / trust issue
 
-Instagram shows the visual style, but Google can help people find Nadia when they search for tattoo artists, guest spots, tattoo care, and tattoo services in specific locations such as Gdańsk and Warsaw.
+The guest spot inquiry form is connected and opens correctly from the landing page.
 
-### Goal
-Build a simple Google visibility system connecting:
+Current issue:
+- On free Render hosting, the app may show a black “Render Application Loading” screen while waking up.
+- This can feel suspicious or unreliable to real clients.
+- It may reduce trust and conversion, especially on mobile.
 
-Instagram  
-↓  
-Landing page  
-↓  
-Google Search  
-↓  
-Google Maps / Google Business Profile  
-↓  
-Client trust / booking via IG DM
+Why it matters:
+- The booking form is part of the public client journey.
+- Before sending real traffic, the form should feel stable, branded, and trustworthy.
+
+Future fixes to consider:
+- Connect a custom booking subdomain, e.g. `booking.nadiakubczak.com`.
+- Improve hosting so clients do not see the Render loading screen.
+- Add a branded transition/loading page if needed.
+- Test the full inquiry flow soon while the free Render plan is still available.
+
+Priority:
+High — should be tested and improved soon.
+
+
 
 ### Planned actions
 
@@ -53,6 +58,31 @@ The purpose is trust, local visibility, and discoverability.
 
 ### Rule
 One step at a time.
+
+
+
+
+## Google visibility setup
+
+### Context
+Nadia / Naku Tattoo needs better visibility outside Instagram.
+
+Instagram shows the visual style, but Google can help people find Nadia when they search for tattoo artists, guest spots, tattoo care, and tattoo services in specific locations such as Gdańsk and Warsaw.
+
+### Goal
+Build a simple Google visibility system connecting:
+
+Instagram  
+↓  
+Landing page  
+↓  
+Google Search  
+↓  
+Google Maps / Google Business Profile  
+↓  
+Client trust / booking via IG DM
+
+
 
 Do backlogu / następnej poprawki UX
 
