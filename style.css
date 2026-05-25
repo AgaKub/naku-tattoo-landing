@@ -308,3 +308,10 @@ h1 span {
     }
 }
 
+.try-on-design-boost {
+    display: block;
+    width: 76px;
+    max-width: 22vw;
+    margin: 8px auto 6px;
+    opacity: 0.9;
+}
