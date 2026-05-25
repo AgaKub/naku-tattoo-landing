@@ -315,3 +315,41 @@ h1 span {
     margin: 8px auto 6px;
     opacity: 0.9;
 }
+
+.try-on-cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+}
+
+.try-on-button-icon {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+    opacity: 0.75;
+    transform: translateX(4px);
+}
+
+.try-on-inquiry-block {
+    margin-top: 46px;
+}
+
+.try-on-inquiry-block .guest-spot-description {
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.try-on-inquiry-block {
+    margin-top: 52px;
+}
+
+.try-on-inquiry-block h2 {
+    margin-bottom: 14px;
+}
+
+.try-on-inquiry-block .guest-spot-description {
+    max-width: 420px;
+    margin: 0 auto 18px;
+}
