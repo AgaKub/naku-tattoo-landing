@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual tattoo try-on — Naku Tattoo</title>
+
+    <link rel="stylesheet" href="../style.css?v=2">
+</head>
+<body class="manual-try-on-page">
+
+    <main class="manual-try-on-main">
+        <section class="manual-try-on-intro">
+            <p class="eyebrow">Naku Tattoo Try-On</p>
+
+            <h1>
+                Try this tattoo
+                <span>through your camera</span>
+            </h1>
+
+            <p class="hero-text">
+                Allow camera access, then move the design on your body.
+            </p>
+
+            <button id="start-camera" class="cta-button" type="button">
+                Start camera
+            </button>
+
+            <p id="camera-status" class="camera-status"></p>
+
+        </section>
+
+        <section id="camera-section" class="manual-camera-section">
+            <div class="camera-frame">
+                <video id="camera-video" autoplay playsinline></video>
+
+                <img
+                    id="tattoo-overlay"
+                    src="../images/hero-designs/design-01.png"
+                    alt=""
+                >
+            </div>
+        </section>
+    </main>
+
+    <script>
+    const startCameraButton = document.getElementById("start-camera");
+    const cameraVideo = document.getElementById("camera-video");
+    const cameraStatus = document.getElementById("camera-status");
+
+    const tattooOverlay = document.getElementById("tattoo-overlay");
+
+    let isDragging = false;
+    let dragOffsetX = 0;
+    let dragOffsetY = 0;
+
+    let isPinching = false;
+    let pinchStartDistance = 0;
+    let pinchStartWidth = 0;
+
+    let tattooRotation = 0;
+    let hasTattooBeenMoved = false;
+
+
+    startCameraButton.addEventListener("click", async function () {
+        cameraStatus.textContent = "Starting camera...";
+
+        try {
+            const cameraStream = await navigator.mediaDevices.getUserMedia({
+                video: true,
+                audio: false
+            });
+
+            cameraVideo.srcObject = cameraStream;
+            cameraStatus.textContent = "Camera is on.";
+        } catch (error) {
+            cameraStatus.textContent = "Camera could not start: " + error.name;
+        }
+    });
+
+    function getTouchDistance(touchOne, touchTwo) {
+        const xDistance = touchTwo.clientX - touchOne.clientX;
+        const yDistance = touchTwo.clientY - touchOne.clientY;
+
+        return Math.sqrt((xDistance * xDistance) + (yDistance * yDistance));
+    }
+
+    function setTattooWidth(newWidth) {
+        const minWidth = 60;
+        const maxWidth = 280;
+
+        if (newWidth < minWidth) {
+            newWidth = minWidth;
+        }
+
+        if (newWidth > maxWidth) {
+            newWidth = maxWidth;
+        }
+
+        tattooOverlay.style.width = newWidth + "px";
+    }
+
+    function applyTattooTransform() {
+        if (hasTattooBeenMoved === true) {
+            tattooOverlay.style.transform = "rotate(" + tattooRotation + "deg)";
+        } else {
+            tattooOverlay.style.transform = "translate(-50%, -50%) rotate(" + tattooRotation + "deg)";
+        }
+    }
+
+    tattooOverlay.addEventListener("pointerdown", function (event) {
+    isDragging = true;
+
+    const tattooRect = tattooOverlay.getBoundingClientRect();
+
+    dragOffsetX = event.clientX - tattooRect.left;
+    dragOffsetY = event.clientY - tattooRect.top;
+
+    tattooOverlay.setPointerCapture(event.pointerId);
+});
+
+    tattooOverlay.addEventListener("pointermove", function (event) {
+        if (isDragging === false) {
+            return;
+        }
+
+        const frameRect = tattooOverlay.parentElement.getBoundingClientRect();
+
+        const newLeft = event.clientX - frameRect.left - dragOffsetX;
+        const newTop = event.clientY - frameRect.top - dragOffsetY;
+
+        tattooOverlay.style.left = newLeft + "px";
+        tattooOverlay.style.top = newTop + "px";
+        hasTattooBeenMoved = true;
+    applyTattooTransform();
+});
+
+    tattooOverlay.addEventListener("pointerup", function () {
+        isDragging = false;
+});
+
+tattooOverlay.addEventListener("touchstart", function (event) {
+    if (event.touches.length === 1) {
+        isDragging = true;
+        isPinching = false;
+
+        const touch = event.touches[0];
+        const tattooRect = tattooOverlay.getBoundingClientRect();
+
+        dragOffsetX = touch.clientX - tattooRect.left;
+        dragOffsetY = touch.clientY - tattooRect.top;
+    }
+
+    if (event.touches.length === 2) {
+        isDragging = false;
+        isPinching = true;
+
+        pinchStartDistance = getTouchDistance(event.touches[0], event.touches[1]);
+        pinchStartWidth = tattooOverlay.offsetWidth;
+    }
+});
+
+tattooOverlay.addEventListener("touchmove", function (event) {
+    event.preventDefault();
+
+    if (event.touches.length === 1 && isDragging === true && isPinching === false) {
+        const touch = event.touches[0];
+        const frameRect = tattooOverlay.parentElement.getBoundingClientRect();
+
+        const newLeft = touch.clientX - frameRect.left - dragOffsetX;
+        const newTop = touch.clientY - frameRect.top - dragOffsetY;
+
+        tattooOverlay.style.left = newLeft + "px";
+        tattooOverlay.style.top = newTop + "px";
+        hasTattooBeenMoved = true;
+        applyTattooTransform();
+    }
+
+    if (event.touches.length === 2 && isPinching === true) {
+        const currentDistance = getTouchDistance(event.touches[0], event.touches[1]);
+        const scaleRatio = currentDistance / pinchStartDistance;
+        const newWidth = pinchStartWidth * scaleRatio;
+
+        setTattooWidth(newWidth);
+    }
+});
+
+tattooOverlay.addEventListener("touchend", function (event) {
+    if (event.touches.length === 0) {
+        isDragging = false;
+        isPinching = false;
+    }
+
+    if (event.touches.length === 1) {
+        isPinching = false;
+    }
+});
+
+function updateTattooRotationForPhone() {
+    const orientationType = screen.orientation ? screen.orientation.type : "";
+
+    if (orientationType === "portrait-secondary") {
+        tattooRotation = 180;
+    } else {
+        tattooRotation = 0;
+    }
+
+    applyTattooTransform();
+}
+
+window.addEventListener("orientationchange", updateTattooRotationForPhone);
+
+if (screen.orientation) {
+    screen.orientation.addEventListener("change", updateTattooRotationForPhone);
+}
+
+</script>
+
+</body>
+</html>
