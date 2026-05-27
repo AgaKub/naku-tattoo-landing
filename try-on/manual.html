@@ -198,8 +198,9 @@ tattooOverlay.addEventListener("touchend", function (event) {
 
 function updateTattooRotationForPhone() {
     const orientationType = screen.orientation ? screen.orientation.type : "";
+    const oldSafariOrientation = typeof window.orientation !== "undefined" ? window.orientation : null;
 
-    if (orientationType === "portrait-secondary") {
+    if (orientationType === "portrait-secondary" || oldSafariOrientation === 180) {
         tattooRotation = 180;
     } else {
         tattooRotation = 0;
@@ -209,10 +210,13 @@ function updateTattooRotationForPhone() {
 }
 
 window.addEventListener("orientationchange", updateTattooRotationForPhone);
+window.addEventListener("resize", updateTattooRotationForPhone);
 
 if (screen.orientation) {
     screen.orientation.addEventListener("change", updateTattooRotationForPhone);
 }
+
+updateTattooRotationForPhone();
 
 </script>
 
