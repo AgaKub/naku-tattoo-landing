@@ -40,6 +40,11 @@
                     alt=""
                 >
             </div>
+
+            <p class="manual-try-on-hint">
+                Move with one finger · Pinch to resize · Double tap to flip
+            </p>
+            
         </section>
     </main>
 
@@ -60,6 +65,7 @@
 
     let tattooRotation = 0;
     let hasTattooBeenMoved = false;
+    let lastTapTime = 0;
 
 
     startCameraButton.addEventListener("click", async function () {
@@ -194,6 +200,23 @@ tattooOverlay.addEventListener("touchend", function (event) {
     if (event.touches.length === 1) {
         isPinching = false;
     }
+});
+
+tattooOverlay.addEventListener("touchend", function () {
+    const currentTapTime = Date.now();
+    const timeSinceLastTap = currentTapTime - lastTapTime;
+
+    if (timeSinceLastTap > 0 && timeSinceLastTap < 300) {
+        if (tattooRotation === 180) {
+            tattooRotation = 0;
+        } else {
+            tattooRotation = 180;
+        }
+
+        applyTattooTransform();
+    }
+
+    lastTapTime = currentTapTime;
 });
 
 function updateTattooRotationForPhone() {
