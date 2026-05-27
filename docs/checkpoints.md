@@ -472,3 +472,53 @@ Possible focus:
 One step at a time.
 
 
+
+
+## Step 83 — Try-On CTA dragon icon polish
+
+### Context
+
+The Try-On page CTA was visually improved while reviewing the Tattoo-AR / Try-On path.
+
+A fresh Snapchat Lens link had been created and sent to Nadia, but Nadia expressed discomfort with Snapchat as a platform. Because of this, the visual CTA polish can stay, but Snapchat should not remain the long-term primary try-on direction.
+
+### What was done
+
+Updated the Try-On CTA button so it feels more branded and softer:
+
+- added a cropped dragon icon from the Lens/Snapcode artwork
+- placed the dragon icon on the right side of the CTA text
+- increased breathing space between the text and icon
+- cleaned the CTA text to: `Try it on now!`
+- kept the CTA visually aligned with the Naku/Nadia style
+- included the existing try-on page tracking event
+
+### Important product decision
+
+The visual style is accepted and can stay.
+
+The destination link is temporary and may later change from Snapchat to a browser-based manual tattoo overlay experience.
+
+### Result
+
+The button now feels more elegant, less platform-specific, and more on-brand.
+
+Current accepted visual setting:
+
+```css
+gap: 18px;
+
+Next
+
+Move browser-based manual tattoo overlay work to a separate focused chat.
+
+Potential future direction:
+
+camera opens directly in browser
+tattoo appears as a draggable/resizable overlay
+no Snapchat required
+Rule
+
+One step at a time.
+
+
