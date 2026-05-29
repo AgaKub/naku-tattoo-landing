@@ -82,8 +82,12 @@ function createCookieBanner() {
         <div class="cookie-banner-text">
             <strong>Cookies & privacy</strong>
             <p>
+                Używamy niezbędnych cookies, aby strona działała poprawnie. Za Twoją zgodą
+                używamy również Meta Pixel, aby rozumieć odwiedziny strony.
+            </p>
+            <p>
                 We use essential cookies to run this website. With your consent,
-                we also use Meta Pixel to understand visits and improve our tattoo try-on experience.
+                we also use Meta Pixel to understand visits.
             </p>
             <a href="/privacy.html">Privacy & Cookies</a>
         </div>
