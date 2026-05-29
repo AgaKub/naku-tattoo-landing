@@ -85,7 +85,7 @@ function createCookieBanner() {
                 We use essential cookies to run this website. With your consent,
                 we also use Meta Pixel to understand visits and improve our tattoo try-on experience.
             </p>
-            <a href="privacy.html">Privacy & Cookies</a>
+            <a href="/privacy.html">Privacy & Cookies</a>
         </div>
         <div class="cookie-banner-actions">
             <button type="button" class="cookie-button secondary" id="rejectCookies">

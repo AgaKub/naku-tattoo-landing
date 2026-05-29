@@ -583,3 +583,92 @@ h1 span {
     line-height: 1.35;
     color: rgba(63, 45, 37, 0.58);
 }
+
+/* Privacy page */
+
+.privacy-page {
+    min-height: 100vh;
+    padding: 40px 18px;
+    background: #fffaf4;
+    color: #3f2d25;
+}
+
+.privacy-card {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 36px;
+    background: rgba(255, 255, 255, 0.74);
+    border: 1px solid rgba(70, 49, 38, 0.12);
+    border-radius: 28px;
+    box-shadow: 0 18px 50px rgba(70, 49, 38, 0.08);
+}
+
+.privacy-card h1 {
+    margin: 18px 0 8px;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1;
+}
+
+.privacy-card h2 {
+    margin: 30px 0 10px;
+    font-size: 1.15rem;
+}
+
+.privacy-card p {
+    margin: 0 0 14px;
+    font-size: 0.96rem;
+    line-height: 1.65;
+}
+
+.privacy-updated {
+    color: rgba(63, 45, 37, 0.62);
+    font-size: 0.82rem;
+}
+
+.back-link {
+    display: inline-block;
+    color: #7b4b3a;
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+    .privacy-page {
+        padding: 12px 8px;
+    }
+
+    .privacy-card {
+        padding: 16px 14px;
+        border-radius: 18px;
+    }
+
+    .privacy-card h1 {
+        font-size: 1.35rem;
+        line-height: 1.05;
+        margin: 10px 0 5px;
+    }
+
+    .privacy-card h2 {
+        font-size: 0.76rem;
+        margin: 15px 0 5px;
+    }
+
+    .privacy-card p {
+        font-size: 0.6rem;
+        line-height: 1.38;
+        margin-bottom: 7px;
+    }
+
+    .privacy-updated {
+        font-size: 0.56rem;
+    }
+
+    .back-link {
+        font-size: 0.6rem;
+    }
+}
