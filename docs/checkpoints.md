@@ -522,3 +522,96 @@ Rule
 One step at a time.
 
 
+---
+
+## Step — Cookie consent and try-on privacy note
+
+### Context
+
+The Naku Tattoo landing page and try-on flow use Meta Pixel / custom events for basic traffic and interaction tracking.
+
+Because Meta Pixel is marketing/tracking functionality, it should not load before the visitor gives cookie consent.
+
+The browser try-on also uses the phone camera, so users need a clear trust note explaining that their camera image is not stored.
+
+### What was done
+
+* Removed the old direct Meta Pixel code from:
+
+  * `index.html`
+  * `try-on/index.html`
+  * `try-on/manual.html`
+
+* Removed the old Facebook `noscript` tracking image.
+
+* Added a new central file:
+
+```text
+cookies.js
+```
+
+* Moved Meta Pixel loading into `cookies.js`.
+
+* Added consent logic using `localStorage`:
+
+```text
+nakuCookieConsent
+```
+
+* Added cookie banner with:
+
+  * `Accept`
+  * `Reject`
+  * `Privacy & Cookies` link
+
+* Updated tracking behavior:
+
+  * Meta Pixel loads only after `Accept`
+  * `Reject` does not block the website
+  * `Reject` does not block browser try-on
+  * custom events use safe tracking function instead of direct `fbq(...)` calls
+
+* Added cookie banner styling in `style.css`.
+
+* Adjusted mobile cookie banner size after real phone screen testing.
+
+* Added a try-on trust note on `try-on/manual.html`:
+
+```text
+We do not store photos or camera images. Camera preview stays in your browser.
+```
+
+* Moved the trust note directly below the `Start camera` button and made it very small/delicate.
+
+### Result
+
+The landing page now has a basic cookie consent layer.
+
+Meta Pixel no longer loads immediately on page open. It only loads after cookie consent.
+
+The browser try-on remains usable even if the visitor rejects marketing cookies.
+
+The try-on page now includes a clear camera privacy reassurance without using heavy or scary GDPR wording.
+
+### Tested
+
+Tested locally on desktop and phone screen.
+
+Checked:
+
+* cookie banner appears when no decision is stored
+* `Accept` hides the banner and stores consent
+* `Reject` hides the banner and should not block try-on
+* mobile banner size is acceptable
+* home page cookie banner remains general
+* camera/photo storage note appears only on the manual try-on page
+
+### Notes
+
+This is an MVP compliance improvement, not a final legal review.
+
+A full Privacy & Cookies page still needs to be added or reviewed later.
+
+### Rule
+
+One step at a time.
