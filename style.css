@@ -628,8 +628,11 @@ h1 span {
 .back-link {
     display: inline-block;
     color: #7b4b3a;
-    text-decoration: none;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    text-decoration-thickness: 1px;
     font-size: 0.9rem;
+    margin-top: 14px;
     margin-bottom: 8px;
 }
 
