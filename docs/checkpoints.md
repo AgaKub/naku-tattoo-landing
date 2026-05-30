@@ -615,3 +615,188 @@ A full Privacy & Cookies page still needs to be added or reviewed later.
 ### Rule
 
 One step at a time.
+
+
+---
+
+# Naku Tattoo Landing — Steps 85–87 Checkpoint
+
+## Context
+
+The inquiry form had already been approved by Nadia and was working in production through the Django Booking System.
+
+The problem was not the form content anymore. The problem was trust and conversion: visitors clicking from the Naku/Nadia landing page were visibly sent to a backend-looking Render URL:
+
+```text
+https://naku-booking-system.onrender.com/inquiry/
+```
+
+This felt dodgy, suspicious, and disconnected from the Naku/Nadia brand.
+
+## Strategic decision
+
+We evaluated several options:
+
+* iframe embedding
+* branded bridge page
+* same-tab link with better context
+* mirrored landing-page form frontend
+* custom branded subdomain
+
+The strongest long-term business-stable solution was chosen:
+
+```text
+booking.nakutattoo.com
+```
+
+This keeps the Django Booking System as Nadia’s real business-growth tool while removing the suspicious Render URL from the visitor-facing flow.
+
+## Step 85 — Connect branded booking subdomain
+
+Created a custom domain in Render:
+
+```text
+booking.nakutattoo.com
+```
+
+Render provided the DNS target:
+
+```text
+naku-booking-system.onrender.com
+```
+
+Added DNS record in Hostinger for `nakutattoo.com`:
+
+```text
+Type: CNAME
+Name: booking
+Target: naku-booking-system.onrender.com
+TTL: 14400
+```
+
+Render verified the domain and issued the HTTPS certificate.
+
+Updated Render environment variable:
+
+```text
+DJANGO_ALLOWED_HOSTS=.onrender.com,booking.nakutattoo.com
+```
+
+Render redeployed successfully.
+
+## Step 86 — Update inquiry links on landing pages
+
+Updated inquiry links in:
+
+```text
+index.html
+try-on/index.html
+```
+
+Changed from:
+
+```text
+https://naku-booking-system.onrender.com/inquiry/
+```
+
+to:
+
+```text
+https://booking.nakutattoo.com/inquiry/
+```
+
+## Step 87 — Fix try-on dead-end flow
+
+During testing, we discovered that:
+
+```text
+try-on/manual.html
+```
+
+had no clear exit after using the camera try-on.
+
+This made the try-on page a dead end.
+
+Added a post-try-on CTA section:
+
+```text
+Feels like your tattoo?
+Send tattoo inquiry
+Back to Naku Tattoo
+```
+
+The main inquiry CTA now links to:
+
+```text
+https://booking.nakutattoo.com/inquiry/
+```
+
+Added tracking event:
+
+```text
+TattooInquiryClick
+```
+
+Adjusted visual hierarchy:
+
+* `Send tattoo inquiry` is now the primary CTA button
+* `Back to Naku Tattoo` is now a smaller underlined secondary link
+
+Updated `style.css` so `.back-link` is visibly clickable.
+
+## Result
+
+The visitor-facing inquiry flow is now branded and trustworthy:
+
+```text
+Naku landing / try-on
+↓
+booking.nakutattoo.com/inquiry/
+↓
+Django Booking System
+↓
+Nadia admin workflow
+```
+
+The Render backend URL is no longer visible in the main inquiry flow.
+
+The inquiry system is now better aligned with the future direction:
+
+```text
+inquiry → Nadia review → booking → reminders → studio calendar logic
+```
+
+## Tested
+
+Confirmed:
+
+* `https://booking.nakutattoo.com/inquiry/` opens successfully
+* HTTPS certificate works
+* form opens under the Naku branded subdomain
+* `index.html` inquiry CTA points to the branded booking domain
+* `try-on/index.html` inquiry CTA points to the branded booking domain
+* `try-on/manual.html` inquiry CTA opens the branded booking domain
+* `try-on/manual.html` now has a visible way forward and a way back
+
+## Notes
+
+The Render URL remains enabled as backend backup.
+
+Future safety task:
+
+```text
+Rotate DJANGO_SECRET_KEY in local .env and Render environment variables.
+```
+
+This is needed because the local secret key was pasted during setup.
+
+Future possible development:
+
+* improve Django form branding further
+* update privacy text if needed
+* connect future booking flow to Nadia’s workflow
+* later explore calendar integration with Jaskółka Tattoo if technically and operationally appropriate
+
+## Rule
+
+One step at a time.
