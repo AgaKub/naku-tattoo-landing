@@ -792,6 +792,21 @@ h1 span {
 
 @media (max-width: 768px) {
     .dragon-select-hero {
-        padding-top: 12px;
+        padding-top: 0;
     }
+
+    .dragon-select-hero .eyebrow {
+        margin-bottom: 8px;
+    }
+
+    .dragon-select-hero h1 {
+        margin-bottom: 12px;
+    }
+
+    .dragon-select-hero p {
+        margin-bottom: 18px;
+    }
+}
+#start-camera {
+    margin-top: 8px;
 }

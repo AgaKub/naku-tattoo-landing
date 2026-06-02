@@ -39,7 +39,7 @@
 
         <section id="camera-section" class="manual-camera-section">
             <p class="manual-try-on-hint">
-                  Move the dragon · Pinch to resize · Then tap Save preview
+                 Move · Pinch to resize · Double tap to flip · Save preview
             </p>
 
                         <div class="camera-frame">
@@ -117,7 +117,7 @@
     let pinchStartDistance = 0;
     let pinchStartWidth = 0;
 
-    let tattooRotation = 0;
+    let isTattooFlipped = false;
     let hasTattooBeenMoved = false;
     let lastTapTime = 0;
 
@@ -172,7 +172,10 @@
         const tattooCenterY = tattooRect.top - frameRect.top + tattooRect.height / 2;
 
         context.translate(tattooCenterX, tattooCenterY);
-        context.rotate(tattooRotation * Math.PI / 180);
+        if (isTattooFlipped) {
+            context.scale(-1, 1);
+        }
+
         context.globalAlpha = 0.92;
         context.globalCompositeOperation = "multiply";
 
@@ -218,10 +221,12 @@
     }
 
     function applyTattooTransform() {
+        const flipTransform = isTattooFlipped ? " scaleX(-1)" : "";
+
         if (hasTattooBeenMoved === true) {
-            tattooOverlay.style.transform = "rotate(" + tattooRotation + "deg)";
+            tattooOverlay.style.transform = flipTransform;
         } else {
-            tattooOverlay.style.transform = "translate(-50%, -50%) rotate(" + tattooRotation + "deg)";
+            tattooOverlay.style.transform = "translate(-50%, -50%)" + flipTransform;
         }
     }
 
@@ -318,39 +323,12 @@ tattooOverlay.addEventListener("touchend", function () {
     const timeSinceLastTap = currentTapTime - lastTapTime;
 
     if (timeSinceLastTap > 0 && timeSinceLastTap < 300) {
-        if (tattooRotation === 180) {
-            tattooRotation = 0;
-        } else {
-            tattooRotation = 180;
-        }
-
+        isTattooFlipped = !isTattooFlipped;
         applyTattooTransform();
     }
 
     lastTapTime = currentTapTime;
 });
-
-function updateTattooRotationForPhone() {
-    const orientationType = screen.orientation ? screen.orientation.type : "";
-    const oldSafariOrientation = typeof window.orientation !== "undefined" ? window.orientation : null;
-
-    if (orientationType === "portrait-secondary" || oldSafariOrientation === 180) {
-        tattooRotation = 180;
-    } else {
-        tattooRotation = 0;
-    }
-
-    applyTattooTransform();
-}
-
-window.addEventListener("orientationchange", updateTattooRotationForPhone);
-window.addEventListener("resize", updateTattooRotationForPhone);
-
-if (screen.orientation) {
-    screen.orientation.addEventListener("change", updateTattooRotationForPhone);
-}
-
-updateTattooRotationForPhone();
 
 </script>
 
