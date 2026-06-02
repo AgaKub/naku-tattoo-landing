@@ -42,18 +42,26 @@
                 Move with one finger · Pinch to resize · Double tap to flip
             </p>
 
-            <div class="camera-frame">
-                <video id="camera-video" autoplay playsinline></video>
+                        <div class="camera-frame">
+                            <video id="camera-video" autoplay playsinline></video>
 
-                <img
-                    id="tattoo-overlay"
-                    src="../images/hero-designs/design-01.png"
-                    alt=""
-                >
-            </div>
+                            <img
+                                id="tattoo-overlay"
+                                src="../images/hero-designs/design-01.png"
+                                alt=""
+                            >
+                        </div>
 
-                        
-        </section>
+                        <div class="snapshot-actions">
+                            <button id="save-preview" type="button">
+                                Save preview
+                            </button>
+
+                            <a id="download-preview" download="naku-tattoo-preview.png">
+                                Download preview
+                            </a>
+                        </div>
+                    </section>
 
         <section class="guest-spot">
             <h2>Feels like your tattoo?</h2>
@@ -83,6 +91,10 @@
     const cameraStatus = document.getElementById("camera-status");
 
     const tattooOverlay = document.getElementById("tattoo-overlay");
+
+    const savePreviewButton = document.getElementById("save-preview");
+    const downloadPreviewLink = document.getElementById("download-preview");
+    const cameraFrame = document.querySelector(".camera-frame");
 
     const designImages = {
         "dragon-01": "../images/dragons/dragon-01.png",
@@ -126,6 +138,54 @@
         } catch (error) {
             cameraStatus.textContent = "Camera could not start: " + error.name;
         }
+    });
+
+        savePreviewButton.addEventListener("click", function () {
+        const frameRect = cameraFrame.getBoundingClientRect();
+        const videoRect = cameraVideo.getBoundingClientRect();
+        const tattooRect = tattooOverlay.getBoundingClientRect();
+
+        const canvas = document.createElement("canvas");
+        canvas.width = frameRect.width;
+        canvas.height = frameRect.height;
+
+        const context = canvas.getContext("2d");
+
+        context.drawImage(
+            cameraVideo,
+            videoRect.left - frameRect.left,
+            videoRect.top - frameRect.top,
+            videoRect.width,
+            videoRect.height
+        );
+
+        context.save();
+
+        const tattooCenterX = tattooRect.left - frameRect.left + tattooRect.width / 2;
+        const tattooCenterY = tattooRect.top - frameRect.top + tattooRect.height / 2;
+
+        context.translate(tattooCenterX, tattooCenterY);
+        context.rotate(tattooRotation * Math.PI / 180);
+        context.globalAlpha = 0.92;
+        context.globalCompositeOperation = "multiply";
+
+        context.drawImage(
+            tattooOverlay,
+            -tattooRect.width / 2,
+            -tattooRect.height / 2,
+            tattooRect.width,
+            tattooRect.height
+        );
+
+        context.restore();
+
+        const previewImage = canvas.toDataURL("image/png");
+
+        downloadPreviewLink.href = previewImage;
+        downloadPreviewLink.style.display = "inline-block";
+        downloadPreviewLink.textContent = "Download preview";
+
+        trackNakuEvent("SavePreviewClick");
     });
 
     function getTouchDistance(touchOne, touchTwo) {
