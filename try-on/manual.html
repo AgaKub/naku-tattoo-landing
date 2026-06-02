@@ -84,6 +84,19 @@
 
     const tattooOverlay = document.getElementById("tattoo-overlay");
 
+    const designImages = {
+        "dragon-01": "../images/dragons/dragon-01.png",
+        "dragon-02": "../images/dragons/dragon-02.png",
+        "dragon-03": "../images/dragons/dragon-03.png"
+    };
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const selectedDesign = urlParams.get("design");
+
+    if (designImages[selectedDesign]) {
+        tattooOverlay.src = designImages[selectedDesign];
+    }
+
     let isDragging = false;
     let dragOffsetX = 0;
     let dragOffsetY = 0;
