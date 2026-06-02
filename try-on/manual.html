@@ -39,7 +39,7 @@
 
         <section id="camera-section" class="manual-camera-section">
             <p class="manual-try-on-hint">
-                Move with one finger · Pinch to resize · Double tap to flip
+                  Move the dragon · Pinch to resize · Then tap Save preview
             </p>
 
                         <div class="camera-frame">
@@ -152,13 +152,19 @@
 
         const context = canvas.getContext("2d");
 
+               context.save();
+        context.translate(canvas.width, 0);
+        context.scale(-1, 1);
+
         context.drawImage(
             cameraVideo,
-            videoRect.left - frameRect.left,
+            -(videoRect.left - frameRect.left) - videoRect.width,
             videoRect.top - frameRect.top,
             videoRect.width,
             videoRect.height
         );
+
+        context.restore();
 
         context.save();
 

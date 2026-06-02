@@ -185,12 +185,12 @@ h1 span {
 }
 
 .guest-spot {
-    margin-top: 36px;
+    margin-top: 10px;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
 }
 
 .guest-spot h2 {
@@ -214,10 +214,14 @@ h1 span {
 
 .guest-spot .guest-spot-description {
     max-width: 360px;
-    margin-top: 34px;
+    margin-top: 8px;
     font-size: 0.78rem;
     line-height: 1.5;
     font-weight: 530;
+}
+
+.manual-try-on-page .guest-spot .cta-button {
+    margin-top: 8px;
 }
 
 .guest-spot-link {
@@ -301,7 +305,7 @@ h1 span {
     }
 
     .guest-spot {
-        margin-top: 30px;
+        margin-top: 8px;
         text-align: center;
         gap: 6px;
     }
@@ -313,7 +317,7 @@ h1 span {
     }
 
     .guest-spot .guest-spot-description {
-        margin-top: 24px;
+        margin-top: 8px;
     }
 
     .guest-spot p {
@@ -385,6 +389,7 @@ h1 span {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transform: scaleX(-1);
 }
 
 #tattoo-overlay {
@@ -404,6 +409,20 @@ h1 span {
     color: #8a737c;
     font-size: 0.85rem;
     font-weight: 600;
+}
+
+.camera-active .manual-try-on-intro {
+    display: none;
+}
+
+.camera-active .manual-try-on-main {
+    padding-top: 10px;
+    gap: 10px;
+}
+
+.camera-active .manual-try-on-hint {
+    margin-top: 0;
+    margin-bottom: 8px;
 }
 
 @media (max-width: 768px) {
@@ -449,27 +468,14 @@ h1 span {
         aspect-ratio: 1 / 1;
         border-radius: 24px;
     }
-    .camera-active .manual-try-on-intro {
-        display: none;
-    }
-
-    .camera-active .manual-try-on-main {
-        padding-top: 10px;
-        gap: 10px;
-    }
-
-    .camera-active .manual-try-on-hint {
-        margin-top: 0;
-        margin-bottom: 8px;
-    }
 }
 
 .manual-try-on-hint {
-    margin: 0 0 12px;
-    color: #8a737c;
-    font-size: 0.78rem;
-    line-height: 1.4;
-    font-weight: 600;
+    margin: 0 0 10px;
+    color: #4a323a;
+    font-size: 0.88rem;
+    line-height: 1.35;
+    font-weight: 800;
     text-align: center;
 }
 
@@ -776,4 +782,10 @@ h1 span {
     text-decoration: underline;
     text-underline-offset: 4px;
     text-decoration-thickness: 1px;
+}
+
+@media (min-width: 769px) {
+    .manual-try-on-page .guest-spot .cta-button {
+        margin-top: 8px;
+    }
 }
