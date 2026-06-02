@@ -396,6 +396,7 @@ h1 span {
     touch-action: none;
     cursor: grab;
     opacity: 0.92;
+    mix-blend-mode: multiply;
 }
 
 .camera-status {
