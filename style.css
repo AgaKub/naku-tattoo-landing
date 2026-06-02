@@ -789,3 +789,9 @@ h1 span {
         margin-top: 8px;
     }
 }
+
+@media (max-width: 768px) {
+    .dragon-select-hero {
+        padding-top: 12px;
+    }
+}
