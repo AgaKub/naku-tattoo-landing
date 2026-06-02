@@ -449,6 +449,19 @@ h1 span {
         aspect-ratio: 1 / 1;
         border-radius: 24px;
     }
+    .camera-active .manual-try-on-intro {
+        display: none;
+    }
+
+    .camera-active .manual-try-on-main {
+        padding-top: 10px;
+        gap: 10px;
+    }
+
+    .camera-active .manual-try-on-hint {
+        margin-top: 0;
+        margin-bottom: 8px;
+    }
 }
 
 .manual-try-on-hint {

@@ -135,6 +135,7 @@
 
             cameraVideo.srcObject = cameraStream;
             cameraStatus.textContent = "Camera is on.";
+            document.body.classList.add("camera-active");
         } catch (error) {
             cameraStatus.textContent = "Camera could not start: " + error.name;
         }
