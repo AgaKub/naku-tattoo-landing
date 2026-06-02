@@ -409,8 +409,8 @@ h1 span {
 @media (max-width: 768px) {
     .manual-try-on-main {
         min-height: 100svh;
-        padding: 18px 14px 90px;
-        gap: 16px;
+        padding: 10px 14px 80px;
+        gap: 10px;
     }
 
     .manual-try-on-intro .eyebrow {
@@ -419,8 +419,8 @@ h1 span {
     }
 
     .manual-try-on-intro h1 {
-        font-size: 2rem;
-        margin-bottom: 10px;
+        font-size: 1.65rem;
+        margin-bottom: 6px;
     }
 
     .manual-try-on-intro h1 span {
@@ -429,14 +429,14 @@ h1 span {
     }
 
     .manual-try-on-intro .hero-text {
-        font-size: 0.95rem;
-        line-height: 1.35;
-        margin-bottom: 18px;
+        font-size: 0.85rem;
+        line-height: 1.25;
+        margin-bottom: 10px;
     }
 
     .manual-try-on-intro .cta-button {
-        margin-top: 14px;
-        padding: 12px 20px;
+        margin-top: 8px;
+        padding: 11px 20px;
     }
 
     .camera-status {
