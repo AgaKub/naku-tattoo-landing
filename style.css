@@ -444,9 +444,9 @@ h1 span {
         font-size: 0.78rem;
     }
 
-    .camera-frame {
-        width: min(100%, 360px);
-        aspect-ratio: 4 / 5;
+        .camera-frame {
+        width: min(100%, 340px);
+        aspect-ratio: 1 / 1;
         border-radius: 24px;
     }
 }
