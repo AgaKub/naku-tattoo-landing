@@ -755,6 +755,27 @@ h1 span {
     text-decoration-thickness: 1px;
 }
 
+.tattoo-adjust-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 14px;
+    flex-wrap: wrap;
+}
+
+.tattoo-adjust-controls button {
+    border: 1px solid rgba(199, 162, 124, 0.55);
+    border-radius: 999px;
+    background: rgba(255, 248, 242, 0.88);
+    color: #8a737c;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 9px 14px;
+    cursor: pointer;
+}
+
 .snapshot-actions {
     display: flex;
     flex-direction: column;
@@ -807,6 +828,7 @@ h1 span {
         margin-bottom: 18px;
     }
 }
+
 #start-camera {
     margin-top: 8px;
 }
