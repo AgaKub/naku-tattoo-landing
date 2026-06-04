@@ -785,9 +785,10 @@ h1 span {
 
 .preview-helper {
     margin: -2px 0 0;
-    color: #7c6670;
-    font-size: 0.82rem;
-    font-weight: 500;
+    color: #6f5f67;
+    font-size: 0.78rem;
+    font-weight: 530;
+    line-height: 1.5;
     text-align: center;
 }
 
