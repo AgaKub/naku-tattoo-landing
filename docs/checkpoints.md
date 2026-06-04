@@ -960,3 +960,75 @@ On-page generated preview completed, tested, committed and pushed.
 ## Rule
 
 One step at a time.
+
+
+# 2026-06-04 — Try-on Share Preview UX final cleanup
+
+## Status
+
+Try-on preview UX finalized, tested on phone, committed and pushed. Repo clean.
+
+## Completed
+
+- Added **Share preview** option after saving the generated tattoo preview.
+- Confirmed phone native share sheet works.
+- Confirmed user can save/share the generated preview through phone system options.
+- Removed **Download preview** from the page to simplify UX.
+- Kept the generated preview visible directly on the page after Save preview.
+- Final user flow is now clearer:
+  - Save preview
+  - Share preview
+  - Your preview
+- Tested on phone.
+- Repo is clean.
+
+## Current final try-on flow
+
+1. User chooses a dragon design.
+2. User starts rear camera.
+3. User places the design using:
+   - move,
+   - pinch resize,
+   - tilt left/right,
+   - reset tilt,
+   - double tap flip.
+4. User taps **Save preview**.
+5. The generated preview appears on the page.
+6. User taps **Share preview**.
+7. Phone share sheet opens, allowing save/share through phone system.
+
+## Current working features
+
+- 3-dragon try-on flow works.
+- Rear camera opens by default.
+- Natural rear-camera left/right orientation works.
+- Move works.
+- Pinch resize works.
+- Tilt left/right works.
+- Reset tilt works.
+- Double tap flip works.
+- Save preview works.
+- Generated preview appears on page.
+- Share preview works.
+- Download preview was removed for clearer UX.
+
+## Testing notes
+
+- Chrome / Edge phone behavior works.
+- Safari download behavior was not ideal, but Download is no longer the main flow.
+- On-page preview + Share preview solves the user problem better than file download.
+- Laptop local `file://` Save preview error is not a product bug; it is caused by browser canvas security. Live HTTPS version works.
+
+## Next planned direction
+
+Nadia wants to test the try-on flow on simpler tattoo designs. Aga already has PNG files prepared.
+
+Potential next focused work:
+- add simpler design PNG files,
+- decide whether to create a new simple-design try-on page or reuse current manual try-on logic,
+- keep the flow lightweight for IG/ad testing,
+- test whether simple designs are easier and clearer than dragons.
+
+## Rule
+
+One step at a time.
