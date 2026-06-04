@@ -173,19 +173,13 @@
 
         const context = canvas.getContext("2d");
 
-               context.save();
-        context.translate(canvas.width, 0);
-        context.scale(-1, 1);
-
         context.drawImage(
             cameraVideo,
-            -(videoRect.left - frameRect.left) - videoRect.width,
-            videoRect.top - frameRect.top,
-            videoRect.width,
-            videoRect.height
+            0,
+            0,
+            canvas.width,
+            canvas.height
         );
-
-        context.restore();
 
         context.save();
 
