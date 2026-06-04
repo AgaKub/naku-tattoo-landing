@@ -1,5 +1,20 @@
 # Naku Tattoo — Backlog
 
+### Backlog / safety:
+Rotate DJANGO_SECRET_KEY in local .env and Render environment variables.
+
+
+### Create /try-on/ as a collection hub for all ready-to-try designs.
+
+### Add copyright / artwork rights information during Share preview flow.
+   Preview is for personal try-on/reference only.
+   Tattoo artwork belongs to Nadia / Naku Tattoo.
+   Do not copy, reuse, tattoo elsewhere, or use commercially.
+
+
+
+
+
 
 
 ## Guest spot dropdown should filter by location and show date/status

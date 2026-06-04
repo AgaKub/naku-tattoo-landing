@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple tattoo try-on — Naku Tattoo</title>
+    <meta name="description" content="Choose a little tattoo design and try it on through your phone camera.">
+    <link rel="stylesheet" href="../style.css?v=93">
+    <script src="../cookies.js"></script>
+</head>
+<body>
+    <main class="page-shell">
+        <section class="hero try-on-hero dragon-select-hero">
+            <p class="eyebrow">Naku Tattoo Try-On</p>
+
+            <h1>
+                Choose a little design
+            </h1>
+
+            <p>
+                Pick one small tattoo design and see how it feels on your skin through your phone camera.
+            </p>
+
+            <div class="dragon-grid">
+                <a class="dragon-card" href="manual.html?design=simple-01" onclick="trackNakuEvent('SimpleTryOnClick01');">
+                    <img src="../images/simple/simple-01.png" alt="Simple tattoo design 1">
+                    <span>Open try-on</span>
+                </a>
+
+                <a class="dragon-card" href="manual.html?design=simple-02" onclick="trackNakuEvent('SimpleTryOnClick02');">
+                    <img src="../images/simple/simple-02.png" alt="Simple tattoo design 2">
+                    <span>Open try-on</span>
+                </a>
+
+                <a class="dragon-card" href="manual.html?design=simple-03" onclick="trackNakuEvent('SimpleTryOnClick03');">
+                    <img src="../images/simple/simple-03.png" alt="Simple tattoo design 3">
+                    <span>Open try-on</span>
+                </a>
+
+                <a class="dragon-card" href="manual.html?design=simple-04" onclick="trackNakuEvent('SimpleTryOnClick04');">
+                    <img src="../images/simple/simple-04.png" alt="Simple tattoo design 4">
+                    <span>Open try-on</span>
+                </a>
+
+                <a class="dragon-card" href="manual.html?design=simple-05" onclick="trackNakuEvent('SimpleTryOnClick05');">
+                    <img src="../images/simple/simple-05.png" alt="Simple tattoo design 5">
+                    <span>Open try-on</span>
+                </a>
+            </div>
+
+            <p class="guest-spot-description">
+                This is a soft preview only. Nadia will help with the final size, placement and flow.
+            </p>
+
+            <div class="dragon-actions">
+                <a href="https://booking.nakutattoo.com/inquiry/" class="cta-button" onclick="trackNakuEvent('SimpleInquiryClick');">
+                    Send tattoo inquiry
+                </a>
+
+                <a href="../index.html" class="secondary-link">
+                    Back to Naku Tattoo
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        trackNakuEvent("SimpleTryOnPageView");
+    </script>
+</body>
+</html>
