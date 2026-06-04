@@ -840,3 +840,67 @@ Style the new tilt controls so they feel consistent with the Naku Tattoo try-on 
 ## Rule
 
 One step at a time.
+
+
+
+# 2026-06-04 — Try-on rear camera orientation and preview capture fix
+
+## Status
+
+Rear camera try-on functionality stabilized and tested on phone.
+
+## Completed
+
+* Confirmed the try-on now prefers the rear/back phone camera.
+* Added and tested natural rear-camera orientation:
+
+  * actual left side appears on the left side of the screen,
+  * actual right side appears on the right side of the screen.
+* Fixed Save preview / Download preview so the downloaded image contains:
+
+  * camera image,
+  * selected dragon design,
+  * position,
+  * size,
+  * tilt,
+  * flip state.
+* Confirmed that the earlier broken preview issue was caused by canvas/video capture logic and later by browser cache confusion during testing.
+* Confirmed the working version in a different browser with cache-busting URL.
+
+## Current working try-on features
+
+* Rear camera opens correctly.
+* Move works.
+* Pinch resize works.
+* Tilt left/right works.
+* Reset tilt works.
+* Double tap flip works.
+* Save preview works.
+* Download preview works.
+* Downloaded preview includes camera + dragon, not dragon-only.
+
+## Notes
+
+During testing, browser cache caused confusing results. For future CSS/JS testing, use a fresh browser or cache-busting URL parameter.
+
+Example:
+
+```text
+/try-on/manual.html?design=dragon-01&v=test-name
+```
+
+If `style.css` is changed and the phone still shows old styling, consider updating the stylesheet version in `manual.html`.
+
+## Next possible step
+
+Return to styling / UX polish for the try-on controls.
+
+Possible UX backlog:
+
+* Improve the Save preview / Download flow.
+* Consider a Share preview option so users do not need to search the Downloads folder.
+* Update hint text to include tilt.
+
+## Rule
+
+One step at a time.
