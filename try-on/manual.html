@@ -52,6 +52,20 @@
                             >
                         </div>
 
+                        <div class="tattoo-adjust-controls" aria-label="Tattoo adjustment controls">
+                            <button id="rotate-left" type="button">
+                                ↶
+                            </button>
+
+                            <button id="reset-rotation" type="button">
+                                Reset tilt
+                            </button>
+
+                            <button id="rotate-right" type="button">
+                                ↷
+                            </button>
+                        </div>
+
                         <div class="snapshot-actions">
                             <button id="save-preview" type="button">
                                 Save preview
@@ -96,6 +110,10 @@
     const downloadPreviewLink = document.getElementById("download-preview");
     const cameraFrame = document.querySelector(".camera-frame");
 
+    const rotateLeftButton = document.getElementById("rotate-left");
+    const resetRotationButton = document.getElementById("reset-rotation");
+    const rotateRightButton = document.getElementById("rotate-right");
+
     const designImages = {
         "dragon-01": "../images/dragons/dragon-01.png",
         "dragon-02": "../images/dragons/dragon-02.png",
@@ -118,6 +136,7 @@
     let pinchStartWidth = 0;
 
     let isTattooFlipped = false;
+    let tattooRotation = 0;
     let hasTattooBeenMoved = false;
     let lastTapTime = 0;
 
@@ -172,6 +191,8 @@
         const tattooCenterY = tattooRect.top - frameRect.top + tattooRect.height / 2;
 
         context.translate(tattooCenterX, tattooCenterY);
+        context.rotate(tattooRotation * Math.PI / 180);
+
         if (isTattooFlipped) {
             context.scale(-1, 1);
         }
@@ -221,14 +242,30 @@
     }
 
     function applyTattooTransform() {
+        const rotationTransform = ` rotate(${tattooRotation}deg)`;
         const flipTransform = isTattooFlipped ? " scaleX(-1)" : "";
 
         if (hasTattooBeenMoved === true) {
-            tattooOverlay.style.transform = flipTransform;
+            tattooOverlay.style.transform = rotationTransform + flipTransform;
         } else {
-            tattooOverlay.style.transform = "translate(-50%, -50%)" + flipTransform;
+            tattooOverlay.style.transform = "translate(-50%, -50%)" + rotationTransform + flipTransform;
         }
     }
+
+    rotateLeftButton.addEventListener("click", function () {
+        tattooRotation = tattooRotation - 10;
+        applyTattooTransform();
+    });
+
+    resetRotationButton.addEventListener("click", function () {
+        tattooRotation = 0;
+        applyTattooTransform();
+    });
+
+    rotateRightButton.addEventListener("click", function () {
+        tattooRotation = tattooRotation + 10;
+        applyTattooTransform();
+    });
 
     tattooOverlay.addEventListener("pointerdown", function (event) {
     isDragging = true;
