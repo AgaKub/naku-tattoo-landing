@@ -148,7 +148,9 @@
 
         try {
             const cameraStream = await navigator.mediaDevices.getUserMedia({
-                video: true,
+                video: {
+                    facingMode: "environment"
+                },
                 audio: false
             });
 
