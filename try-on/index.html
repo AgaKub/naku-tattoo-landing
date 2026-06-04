@@ -1,89 +1,68 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curious to see? tattoo preview by Naku Tattoo</title>
-    <meta name="description" content="Try it on your skin — Naku Tattoo, move it with one finger and resize it by pinching.">
+    <title>Tattoo try-on — Naku Tattoo</title>
+    <meta name="description" content="Choose a Naku Tattoo design family and try a tattoo preview on your body.">
 
-    <meta property="og:title" content="Curious to see?">
-    <meta property="og:description" content="Try it on your skin — Naku Tattoo">
+    <meta property="og:title" content="Tattoo try-on — Naku Tattoo">
+    <meta property="og:description" content="Choose a design family and see how it feels on your skin.">
     
-    <meta name="twitter:title" content="Curious to see?">
-    <meta name="twitter:description" content="Try it on your skin — Naku Tattoo">   
+    <meta name="twitter:title" content="Tattoo try-on — Naku Tattoo">
+    <meta name="twitter:description" content="Choose a design family and see how it feels on your skin.">   
 
-    <link rel="stylesheet" href="../style.css?v=92">
-
+    <link rel="stylesheet" href="../style.css?v=93">
     <script src="../cookies.js"></script>
 </head>
 <body>
-
-    <main>
-        <section class="hero">
-            <div class="hero-designs" aria-hidden="true">
-                <img class="hero-design hero-design-one try-on-hero-design" src="../images/hero-designs/design-01.png" alt="">
-            </div>
-            
+    <main class="page-shell">
+        <section class="hero try-on-hero dragon-select-hero">
             <p class="eyebrow">Naku Tattoo Try-On</p>
 
             <h1>
-                Try this tattoo
-                <span>on your body</span>
+                Choose a design family
             </h1>
 
-           <p class="hero-text">
-                Curious how it feels on your skin?<br>
-                Give the design a place to land.
-            </p>
-
-            <p class="soft-invite">
-                Move it, resize it, play with placement.
-            </p>
-
-            <a
-                href="manual.html"
-                class="cta-button"
-                onclick="trackNakuEvent('OpenARTryOnClick');"
-            >
-                <span>Try it on now!</span>
-                <span class="cta-lens-icon-wrap">
-                    <img
-                        src="snapcode.png"
-                        alt=""
-                        class="cta-lens-icon"
-                    >
-                </span>
-            </a>
-
-        </section>
-
-        <section class="booking-info">
             <p>
-                <span class="booking-location">Like Nadia’s style?</span>
-                <a href="https://www.instagram.com/naku.tattoo?igsh=MTQ2NW5iZW5iMDJiZQ=="
-                    onclick="trackNakuEvent('InstagramPortfolioClick');"
-                >
-                    See more designs on Instagram
-                </a>
+                Pick a small collection and try a tattoo preview on your body through your phone camera.
             </p>
-        </section>
 
-        <section class="guest-spot">
-            <h2>Feels like your direction?</h2>
+            <div class="dragon-grid">
+                <a class="dragon-card" href="dragons.html" onclick="trackNakuEvent('TryOnHubDragonsClick');">
+                    <img src="../images/dragons/dragon-01.png" alt="Dragon tattoo designs">
+                    <span>Dragons</span>
+                </a>
+
+                <a class="dragon-card" href="simple.html" onclick="trackNakuEvent('TryOnHubSimpleClick');">
+                    <img src="../images/simple/simple-01.png" alt="Simple tattoo designs">
+                    <span>Simple little designs</span>
+                </a>
+
+                <a class="dragon-card" href="botanical.html" onclick="trackNakuEvent('TryOnHubBotanicalClick');">
+                    <img src="../images/botanical/botanical-01.png" alt="Botanical tattoo designs">
+                    <span>Botanical designs</span>
+                </a>
+            </div>
 
             <p class="guest-spot-description">
-                Send a short inquiry when you’re ready to talk about placement, size and booking.
+                More design families can be added later as Nadia prepares new collections.
             </p>
 
-            <a
-                href="https://booking.nakutattoo.com/inquiry/"
-                class="guest-spot-link"
-               onclick="trackNakuEvent('TattooInquiryClick');"
-            >
-                Send tattoo inquiry
-            </a>
-        </section>
+            <div class="dragon-actions">
+                <a href="https://booking.nakutattoo.com/inquiry/" class="cta-button" onclick="trackNakuEvent('TryOnHubInquiryClick');">
+                    Send tattoo inquiry
+                </a>
 
+                <a href="../index.html" class="secondary-link">
+                    Back to Naku Tattoo
+                </a>
+            </div>
+        </section>
     </main>
+
+    <script>
+        trackNakuEvent("TryOnHubPageView");
+    </script>
 </body>
 </html>
