@@ -804,15 +804,6 @@ h1 span {
     font-family: inherit;
 }
 
-#download-preview {
-    display: none;
-    color: #8a737c;
-    font-weight: 600;
-    text-decoration: underline;
-    text-underline-offset: 4px;
-    text-decoration-thickness: 1px;
-}
-
 #share-preview {
     display: none;
     border: 1px solid rgba(199, 162, 124, 0.55);

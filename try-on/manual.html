@@ -75,10 +75,6 @@
                                 Tap Save preview to see your image below.
                             </p>
 
-                            <a id="download-preview" download="naku-tattoo-preview.png">
-                                Download preview
-                            </a>
-
                             <button id="share-preview" type="button">
                                 Share preview
                             </button>
@@ -122,7 +118,6 @@
     const tattooOverlay = document.getElementById("tattoo-overlay");
 
     const savePreviewButton = document.getElementById("save-preview");
-    const downloadPreviewLink = document.getElementById("download-preview");
     const sharePreviewButton = document.getElementById("share-preview");
     const generatedPreview = document.getElementById("generated-preview");
     const generatedPreviewImage = document.getElementById("generated-preview-image");
@@ -226,10 +221,6 @@
         context.restore();
 
         const previewImage = canvas.toDataURL("image/png");
-
-        downloadPreviewLink.href = previewImage;
-        downloadPreviewLink.style.display = "inline-block";
-        downloadPreviewLink.textContent = "Download preview";
 
         generatedPreviewImage.src = previewImage;
         generatedPreview.style.display = "block";
