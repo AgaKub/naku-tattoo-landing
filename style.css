@@ -817,6 +817,37 @@ h1 span {
     cursor: pointer;
 }
 
+.generated-preview .preview-rights-note {
+    max-width: 300px;
+    margin: 8px auto 4px;
+    font-size: 0.68rem;
+    line-height: 1.35;
+    color: #9a858d;
+    text-align: center;
+    font-weight: 400;
+}
+
+.preview-consent {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    max-width: 320px;
+    margin: 10px auto 8px;
+    font-size: 0.75rem;
+    line-height: 1.35;
+    color: #6f5964;
+    text-align: left;
+}
+
+.preview-consent input {
+    margin-top: 2px;
+}
+
+#share-preview:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
 .generated-preview {
     display: none;
     width: min(100%, 280px);

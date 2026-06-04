@@ -75,14 +75,23 @@
                                 Tap Save preview to see your image below.
                             </p>
 
-                            <button id="share-preview" type="button">
-                                Share preview
-                            </button>
-
                             <div id="generated-preview" class="generated-preview">
                                 <p>Your preview</p>
 
                                 <img id="generated-preview-image" alt="Generated tattoo preview">
+
+                                <p class="preview-rights-note">
+                                    Artwork by Naku Tattoo. This preview is for personal reference only.
+                                </p>
+
+                                <label class="preview-consent">
+                                    <input id="preview-consent" type="checkbox">
+                                    <span>I understand this preview is for personal reference only.</span>
+                                </label>
+
+                                <button id="share-preview" type="button" disabled>
+                                    Share preview
+                                </button>
                             </div>
 
                         </div>
@@ -119,6 +128,7 @@
 
     const savePreviewButton = document.getElementById("save-preview");
     const sharePreviewButton = document.getElementById("share-preview");
+    const previewConsentCheckbox = document.getElementById("preview-consent");
     const generatedPreview = document.getElementById("generated-preview");
     const generatedPreviewImage = document.getElementById("generated-preview-image");
     const cameraFrame = document.querySelector(".camera-frame");
@@ -159,6 +169,14 @@
     let hasTattooBeenMoved = false;
     let lastTapTime = 0;
     let latestPreviewFile = null;
+
+    previewConsentCheckbox.addEventListener("change", function () {
+        if (previewConsentCheckbox.checked === true && latestPreviewFile) {
+            sharePreviewButton.disabled = false;
+        } else {
+            sharePreviewButton.disabled = true;
+        }
+    });
 
 
     startCameraButton.addEventListener("click", async function () {
@@ -232,6 +250,8 @@
         generatedPreview.style.display = "block";
 
         latestPreviewFile = null;
+        previewConsentCheckbox.checked = false;
+        sharePreviewButton.disabled = true;
         sharePreviewButton.style.display = "none";
 
         fetch(previewImage)
@@ -250,6 +270,7 @@
                 ) {
                     latestPreviewFile = previewFile;
                     sharePreviewButton.style.display = "inline-block";
+                    sharePreviewButton.disabled = true;
                 }
             })
             .catch(function () {
