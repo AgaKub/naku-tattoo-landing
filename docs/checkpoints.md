@@ -800,3 +800,43 @@ Future possible development:
 ## Rule
 
 One step at a time.
+
+
+# 2026-06-04 — Try-on tilt and rear camera update
+
+## Status
+
+Functional update completed and tested on phone.
+
+## Completed
+
+- Added tilt controls to the manual tattoo try-on:
+  - rotate left
+  - reset tilt
+  - rotate right
+- Tilt works with:
+  - drag
+  - pinch resize
+  - flip aside
+  - save preview / download preview
+- Updated camera start logic to prefer rear/back phone camera.
+- Phone test passed.
+- Repo is clean.
+
+## Current state
+
+The try-on flow now supports better tattoo placement:
+- user can move the design,
+- resize it,
+- flip it aside,
+- tilt it left/right,
+- save/download the preview,
+- use the rear camera on phone.
+
+## Next step
+
+Style the new tilt controls so they feel consistent with the Naku Tattoo try-on page and are clear on mobile.
+
+## Rule
+
+One step at a time.
