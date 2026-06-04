@@ -74,6 +74,13 @@
                             <a id="download-preview" download="naku-tattoo-preview.png">
                                 Download preview
                             </a>
+
+                            <div id="generated-preview" class="generated-preview">
+                                <p>Your preview</p>
+
+                                <img id="generated-preview-image" alt="Generated tattoo preview">
+                            </div>
+
                         </div>
                     </section>
 
@@ -108,6 +115,8 @@
 
     const savePreviewButton = document.getElementById("save-preview");
     const downloadPreviewLink = document.getElementById("download-preview");
+    const generatedPreview = document.getElementById("generated-preview");
+    const generatedPreviewImage = document.getElementById("generated-preview-image");
     const cameraFrame = document.querySelector(".camera-frame");
 
     const rotateLeftButton = document.getElementById("rotate-left");
@@ -211,6 +220,9 @@
         downloadPreviewLink.href = previewImage;
         downloadPreviewLink.style.display = "inline-block";
         downloadPreviewLink.textContent = "Download preview";
+
+        generatedPreviewImage.src = previewImage;
+        generatedPreview.style.display = "block";
 
         trackNakuEvent("SavePreviewClick");
     });

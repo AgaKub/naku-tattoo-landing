@@ -804,6 +804,27 @@ h1 span {
     text-decoration-thickness: 1px;
 }
 
+.generated-preview {
+    display: none;
+    width: min(100%, 280px);
+    margin-top: 8px;
+    text-align: center;
+}
+
+.generated-preview p {
+    margin: 0 0 8px;
+    color: #8a737c;
+    font-size: 0.86rem;
+    font-weight: 700;
+}
+
+.generated-preview img {
+    width: 100%;
+    display: block;
+    border-radius: 18px;
+    box-shadow: 0 12px 28px rgba(43, 34, 38, 0.14);
+}
+
 @media (min-width: 769px) {
     .manual-try-on-page .guest-spot .cta-button {
         margin-top: 8px;
