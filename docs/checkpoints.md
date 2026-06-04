@@ -904,3 +904,59 @@ Possible UX backlog:
 ## Rule
 
 One step at a time.
+
+
+# 2026-06-04 — Try-on on-page generated preview
+
+## Status
+
+On-page generated preview completed, tested, committed and pushed.
+
+## Completed
+
+- Added an on-page generated preview after clicking **Save preview**.
+- The generated preview now appears directly below the Save/Download controls.
+- Users can immediately see the saved try-on image without searching the Downloads folder.
+- Download preview still remains available as a fallback.
+- Tested on phone.
+- Confirmed the preview contains:
+  - camera image,
+  - selected dragon,
+  - placement,
+  - size,
+  - tilt,
+  - flip state.
+
+## Testing notes
+
+- Phone live site test passed.
+- Chrome and Edge download behavior works.
+- Safari download behavior remains less clear, but this is less critical because the generated preview now appears directly on the page.
+- Laptop local `file://` Save preview issue is not a product bug. It is caused by browser security:
+  - canvas export is blocked when opened from local file path,
+  - live HTTPS version works correctly.
+
+## Current working try-on features
+
+- Rear camera opens correctly.
+- Natural rear-camera left/right orientation works.
+- Move works.
+- Pinch resize works.
+- Tilt left/right works.
+- Reset tilt works.
+- Double tap flip works.
+- Save preview works.
+- Generated preview appears on page.
+- Download preview works.
+
+## Next possible backlog
+
+- Update hint text to include tilt.
+- Add Share preview option.
+- Polish preview section spacing on mobile.
+- Add a small note: “Preview appears below after saving.”
+- Later: switch dragon inside try-on.
+
+## Rule
+
+One step at a time.
