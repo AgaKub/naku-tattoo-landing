@@ -79,6 +79,10 @@
                                 Download preview
                             </a>
 
+                            <button id="share-preview" type="button">
+                                Share preview
+                            </button>
+
                             <div id="generated-preview" class="generated-preview">
                                 <p>Your preview</p>
 
@@ -119,6 +123,7 @@
 
     const savePreviewButton = document.getElementById("save-preview");
     const downloadPreviewLink = document.getElementById("download-preview");
+    const sharePreviewButton = document.getElementById("share-preview");
     const generatedPreview = document.getElementById("generated-preview");
     const generatedPreviewImage = document.getElementById("generated-preview-image");
     const cameraFrame = document.querySelector(".camera-frame");
@@ -152,6 +157,7 @@
     let tattooRotation = 0;
     let hasTattooBeenMoved = false;
     let lastTapTime = 0;
+    let latestPreviewFile = null;
 
 
     startCameraButton.addEventListener("click", async function () {
@@ -228,7 +234,52 @@
         generatedPreviewImage.src = previewImage;
         generatedPreview.style.display = "block";
 
+        latestPreviewFile = null;
+        sharePreviewButton.style.display = "none";
+
+        fetch(previewImage)
+            .then(function (response) {
+                return response.blob();
+            })
+            .then(function (blob) {
+                const previewFile = new File([blob], "naku-tattoo-preview.png", {
+                    type: "image/png"
+                });
+
+                if (
+                    navigator.share &&
+                    navigator.canShare &&
+                    navigator.canShare({ files: [previewFile] })
+                ) {
+                    latestPreviewFile = previewFile;
+                    sharePreviewButton.style.display = "inline-block";
+                }
+            })
+            .catch(function () {
+                sharePreviewButton.style.display = "none";
+            });
+
         trackNakuEvent("SavePreviewClick");
+    });
+
+    sharePreviewButton.addEventListener("click", async function () {
+        if (!latestPreviewFile) {
+            return;
+        }
+
+        try {
+            await navigator.share({
+                files: [latestPreviewFile],
+                title: "Naku Tattoo preview",
+                text: "My tattoo preview from Naku Tattoo"
+            });
+
+            trackNakuEvent("SharePreviewClick");
+        } catch (error) {
+            if (error.name !== "AbortError") {
+                console.error("Share preview failed:", error);
+            }
+        }
     });
 
     function getTouchDistance(touchOne, touchTwo) {
