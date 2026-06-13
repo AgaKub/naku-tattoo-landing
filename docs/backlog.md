@@ -152,3 +152,18 @@ Teraz	Lepiej
 Which guest spot are you interested in?	Which guest spot date are you interested in?
 If you choose a guest spot location...	If you choose Gdańsk, please select the guest spot date you are interested in.
 
+
+### Homepage navigation order
+
+Idea:
+- Move `Home` lower in the hamburger menu, possibly last.
+- Reason: users usually open the hamburger from the homepage, so `Home` is less important as the first option.
+- More important first actions may be:
+  - Browse designs
+  - Try-on
+  - Booking inquiry
+  - Instagram
+  - Home
+
+Status:
+Backlog. Do not change now.
