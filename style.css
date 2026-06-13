@@ -1142,3 +1142,35 @@ h1 span {
         font-size: 0.9rem;
     }
 }
+
+/* Final compact pass for phone design catalogue */
+
+@media (max-width: 759px) {
+    .designs-hub .dragon-grid {
+        gap: 7px;
+        margin: 10px 0 8px;
+    }
+
+    .designs-hub .dragon-card {
+        min-height: 78px;
+        padding: 8px 14px;
+        grid-template-columns: 56px 1fr;
+        gap: 12px;
+        border-radius: 16px;
+    }
+
+    .designs-hub .dragon-card img {
+        max-width: 56px;
+    }
+
+    .designs-hub .dragon-card span {
+        font-size: 0.9rem;
+    }
+
+    .designs-hub .guest-spot-description {
+        max-width: 320px;
+        margin: 4px auto 8px;
+        font-size: 0.72rem;
+        line-height: 1.2;
+    }
+}
