@@ -1076,3 +1076,69 @@ h1 span {
         padding: 12px 22px;
     }
 }
+
+/* Extra compact mobile design catalogue for ad traffic */
+
+@media (max-width: 759px) {
+    .designs-hub {
+        padding-top: 0;
+        margin-top: -34px;
+    }
+
+    .designs-hub .eyebrow {
+        margin-bottom: 4px;
+        font-size: 11px;
+    }
+
+    .designs-hub h1 {
+        margin-bottom: 8px;
+        font-size: 2rem;
+        line-height: 1;
+    }
+
+    .designs-hub > p {
+        max-width: 330px;
+        margin: 0 auto 12px;
+        font-size: 0.86rem;
+        line-height: 1.25;
+    }
+
+    .designs-hub .dragon-grid {
+        gap: 8px;
+        margin: 12px 0 10px;
+    }
+
+    .designs-hub .dragon-card {
+        min-height: 94px;
+        padding: 10px 14px;
+        grid-template-columns: 68px 1fr;
+        gap: 12px;
+        border-radius: 18px;
+    }
+
+    .designs-hub .dragon-card img {
+        max-width: 68px;
+    }
+
+    .designs-hub .dragon-card span {
+        font-size: 0.95rem;
+        line-height: 1.15;
+    }
+
+    .designs-hub .guest-spot-description {
+        max-width: 330px;
+        margin: 6px auto 10px;
+        font-size: 0.78rem;
+        line-height: 1.25;
+    }
+
+    .designs-hub .dragon-actions {
+        margin-top: 10px;
+        gap: 8px;
+    }
+
+    .designs-hub .dragon-actions .cta-button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
