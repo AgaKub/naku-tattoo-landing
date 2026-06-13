@@ -1245,3 +1245,28 @@ h1 span {
         margin-top: 8px;
     }
 }
+
+/* Balanced vertical rhythm for mobile catalogue */
+
+@media (max-width: 759px) {
+    .designs-hub {
+        margin-top: 22px;
+    }
+
+    .designs-hub .eyebrow {
+        margin-bottom: 8px;
+    }
+
+    .designs-hub h1 {
+        margin-bottom: 14px;
+    }
+
+    .designs-hub > p {
+        margin-bottom: 20px;
+        line-height: 1.32;
+    }
+
+    .designs-hub .dragon-grid {
+        margin-top: 18px;
+    }
+}
