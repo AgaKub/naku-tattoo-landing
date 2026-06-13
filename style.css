@@ -1286,3 +1286,11 @@ h1 span {
         margin-top: 26px;
     }
 }
+
+/* Final tiny upward adjustment for mobile catalogue */
+
+@media (max-width: 759px) {
+    .designs-hub {
+        margin-top: 24px;
+    }
+}
