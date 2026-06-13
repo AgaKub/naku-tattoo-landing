@@ -1174,3 +1174,21 @@ h1 span {
         line-height: 1.2;
     }
 }
+
+/* Restore bottom breathing space on mobile catalogue */
+
+@media (max-width: 759px) {
+    .designs-hub .guest-spot-description {
+        margin: 14px auto 14px;
+        line-height: 1.28;
+    }
+
+    .designs-hub .dragon-actions {
+        margin-top: 16px;
+        gap: 14px;
+    }
+
+    .designs-hub .dragon-actions .cta-button {
+        margin-bottom: 2px;
+    }
+}
