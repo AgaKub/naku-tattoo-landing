@@ -1032,3 +1032,85 @@ Potential next focused work:
 ## Rule
 
 One step at a time.
+---
+
+# 2026-06-13 - Documentation source-of-truth stage
+
+## Context
+
+During work on the Naku Tattoo landing page and Meta Ads Test 4 preparation, the project needed a clearer source of truth outside chat memory.
+
+The issue appeared while debugging the live homepage hamburger navigation and distinguishing between:
+
+- the static landing project
+- the Django booking system
+- GitHub Pages deployment
+- Render booking deployment
+- nadiakubczak.com
+- nakutattoo.com
+- booking.nakutattoo.com
+
+## Completed
+
+Created and committed project documentation files:
+
+- `docs/DEPLOYMENT_MAP.md`
+- `docs/PROJECT_MAP.md`
+- `docs/CURRENT_STATE.md`
+- `docs/OPEN_PATHS.md`
+
+Updated:
+
+- `docs/backlog.md`
+
+## Confirmed architecture
+
+Static landing project:
+
+- Repo: `AgaKub/naku-tattoo-landing`
+- Local path: `C:\Coding\naku-tattoo-landing`
+- Live domain: `https://nadiakubczak.com`
+- Deployment: GitHub Pages
+- Source: branch `main`, folder `/root`
+- CNAME: `nadiakubczak.com`
+
+Booking project:
+
+- Project: `naku-booking-system`
+- Hosting: Render
+- Public booking URL: `https://booking.nakutattoo.com/inquiry/`
+- Render backend: `https://naku-booking-system.onrender.com/inquiry/`
+
+## Recently completed public landing work
+
+- Added `designs.html` as a static tattoo design catalogue / family hub.
+- Added homepage hamburger navigation.
+- Confirmed the hamburger navigation is live after GitHub Pages deployment refreshed.
+- Added homepage navigation order idea to backlog.
+
+## Current open path
+
+Documentation source-of-truth stage is now complete.
+
+Next planned path:
+
+- Return to Meta Ads Test 4 - Fine line - Traffic.
+- Use the designs catalogue as the likely ad destination after live URL verification.
+
+Likely URL to verify before publishing:
+
+```text
+https://www.nakutattoo.com/designs.html
+Work rule going forward
+
+Before new Naku Tattoo coding / deployment / ad-destination work:
+
+Inspect git status.
+Read:
+docs/PROJECT_MAP.md
+docs/DEPLOYMENT_MAP.md
+docs/CURRENT_STATE.md
+docs/OPEN_PATHS.md
+Confirm the active step.
+Keep one active step at a time.
+Put side ideas into backlog.
