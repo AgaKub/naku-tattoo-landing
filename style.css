@@ -1229,3 +1229,11 @@ h1 span {
         gap: 16px;
     }
 }
+
+/* Add comfortable top space back to mobile catalogue */
+
+@media (max-width: 759px) {
+    .designs-hub {
+        margin-top: -10px;
+    }
+}
