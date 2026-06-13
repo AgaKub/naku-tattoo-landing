@@ -1237,3 +1237,11 @@ h1 span {
         margin-top: -10px;
     }
 }
+
+/* More comfortable top space for mobile catalogue */
+
+@media (max-width: 759px) {
+    .designs-hub {
+        margin-top: 8px;
+    }
+}
