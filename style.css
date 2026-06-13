@@ -896,3 +896,38 @@ h1 span {
 #start-camera {
     margin-top: 8px;
 }
+
+/* Designs catalogue page */
+
+.designs-hub .dragon-grid {
+    gap: 14px;
+    margin: 24px 0 18px;
+}
+
+.designs-hub .dragon-card {
+    padding: 14px;
+}
+
+.designs-hub .dragon-card img {
+    max-width: 145px;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 759px) {
+    .designs-hub .dragon-card {
+        display: grid;
+        grid-template-columns: 96px 1fr;
+        align-items: center;
+        gap: 16px;
+        text-align: left;
+    }
+
+    .designs-hub .dragon-card img {
+        max-width: 96px;
+        margin: 0;
+    }
+
+    .designs-hub .dragon-card span {
+        text-align: left;
+    }
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse tattoo designs — Naku Tattoo</title>
+    <meta name="description" content="Browse small, fine line, botanical and dragon tattoo designs by Nadia / Naku Tattoo in Warsaw.">
+
+    <meta property="og:title" content="Browse tattoo designs — Naku Tattoo">
+    <meta property="og:description" content="Explore small, fine line, botanical and dragon tattoo design families by Nadia / Naku Tattoo.">
+
+    <link rel="stylesheet" href="style.css?v=93">
+    <script src="cookies.js"></script>
+</head>
+<body>
+    <main class="page-shell">
+        <section class="hero try-on-hero dragon-select-hero designs-hub">
+            <p class="eyebrow">Naku Tattoo Designs</p>
+
+            <h1>
+                Browse Nadia's tattoo designs
+            </h1>
+
+            <p>
+                Explore some of Nadia's small tattoo design families before choosing the direction for your tattoo inquiry.
+            </p>
+
+            <div class="dragon-grid">
+                <a class="dragon-card" href="try-on/simple.html" onclick="trackNakuEvent('DesignsSimpleClick');">
+                    <img src="images/simple/simple-01.png" alt="Simple and fine line tattoo designs">
+                    <span>Simple & fine line designs</span>
+                </a>
+
+                <a class="dragon-card" href="try-on/botanical.html" onclick="trackNakuEvent('DesignsBotanicalClick');">
+                    <img src="images/botanical/botanical-01.png" alt="Botanical tattoo designs">
+                    <span>Botanical designs</span>
+                </a>
+
+                <a class="dragon-card" href="try-on/dragons.html" onclick="trackNakuEvent('DesignsDragonsClick');">
+                    <img src="images/dragons/dragon-01.png" alt="Dragon tattoo designs">
+                    <span>Dragon designs</span>
+                </a>
+            </div>
+
+            <p class="guest-spot-description">
+                Start by choosing a design family. Nadia will help with the final idea, size, placement and flow.
+            </p>
+
+            <div class="dragon-actions">
+                <a href="https://booking.nakutattoo.com/inquiry/" class="cta-button" onclick="trackNakuEvent('DesignsInquiryClick');">
+                    Send tattoo inquiry
+                </a>
+
+                <a href="https://www.instagram.com/naku.tattoo?igsh=MTQ2NW5iZW5iMDJiZQ==" class="secondary-link" target="_blank" rel="noopener noreferrer">See more on Instagram</a>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        trackNakuEvent("DesignsPageView");
+    </script>
+</body>
+</html>
+
