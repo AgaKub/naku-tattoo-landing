@@ -1278,3 +1278,11 @@ h1 span {
         margin-top: 30px;
     }
 }
+
+/* Final mobile catalogue top spacing */
+
+@media (max-width: 759px) {
+    .designs-hub {
+        margin-top: 26px;
+    }
+}
