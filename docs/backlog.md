@@ -167,3 +167,15 @@ Idea:
 
 Status:
 Backlog. Do not change now.
+
+### Guest spots section — later improvement
+
+Improve the Guest spots section with more social proof from Nadia’s last guest spot.
+
+Possible additions:
+- small photos from the last guest spot
+- healed tattoos or finished tattoo examples
+- short “city mood” / travel memory
+- softer availability wording: “Next guest spot info soon.”
+
+Keep this as a later content/section improvement, not the current active step.
