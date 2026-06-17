@@ -165,3 +165,26 @@ Before continuing in a new chat:
 3. Confirm the active step.
 4. Do not switch to backlog ideas unless explicitly chosen.
 5. One step at a time.
+
+
+## Website navigation direction
+
+Desktop navigation should move toward visible page links instead of relying only on a hamburger menu.
+
+Recommended desktop nav:
+Designs | Try-on | Shop | Guest spots | Aftercare | Book
+
+Mobile should keep the hamburger menu.
+
+Recommended mobile hamburger:
+Home
+Designs
+Try-on
+Shop
+Guest spots
+Aftercare
+Book
+About Nadia
+Contact
+
+Shop is included now as a strategic future path. For the first implementation, `/shop/` can be a soft “Coming soon” page while the full professional online shop is planned.

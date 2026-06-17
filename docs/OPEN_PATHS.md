@@ -199,3 +199,21 @@ After this file is committed:
 1. Add final checkpoint for documentation source-of-truth stage.
 2. Confirm repo clean.
 3. Return to Meta Ads Test 4 setup.
+
+
+## Shop / Posters — future professional online shop
+
+Naku Tattoo will include a **Shop** path as part of the website structure.
+
+This is not planned as a simple external-link gateway. The direction is to build a full professional online shop for Nadia’s posters and art products.
+
+Strategic reason:
+- Nadia already sells posters through other online shops.
+- A Naku shop can show Nadia’s wider spectrum as an artist, not only tattoo work.
+- Posters, prints, characters, creatures, and visual stories support the broader Naku/Nadia artist world.
+- Shop can become a serious future product path alongside tattoos, try-on, guest spots, and aftercare.
+
+Current first step:
+- Add **Shop** to the website navigation.
+- Create a simple `/shop/` coming soon page first.
+- Full e-commerce structure, products, payment, shipping, and platform decisions remain future steps.
