@@ -1294,3 +1294,96 @@ h1 span {
         margin-top: 24px;
     }
 }
+
+/* Aftercare page */
+
+.aftercare-page {
+    padding-bottom: 28px;
+}
+
+.aftercare-content {
+    width: min(880px, calc(100% - 32px));
+    margin: 0 auto 72px;
+    display: grid;
+    gap: 18px;
+}
+
+.aftercare-card {
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid rgba(111, 72, 94, 0.12);
+    border-radius: 28px;
+    padding: 26px;
+    box-shadow: 0 18px 45px rgba(91, 58, 79, 0.08);
+    text-align: left;
+}
+
+.aftercare-card h2 {
+    margin: 0 0 14px;
+    font-size: 1.28rem;
+}
+
+.aftercare-card p {
+    margin: 0 0 14px;
+    line-height: 1.65;
+}
+
+.aftercare-card p:last-child {
+    margin-bottom: 0;
+}
+
+.aftercare-card ul {
+    margin: 0 0 16px;
+    padding-left: 22px;
+}
+
+.aftercare-card li {
+    margin-bottom: 8px;
+    line-height: 1.55;
+}
+
+.aftercare-closing {
+    text-align: center;
+}
+
+.aftercare-closing .dragon-actions {
+    margin-top: 24px;
+}
+
+@media (max-width: 700px) {
+    .aftercare-page {
+        padding-top: 8px;
+        padding-bottom: 24px;
+    }
+
+    .aftercare-page h1 {
+        font-size: 2rem;
+        line-height: 1.05;
+    }
+
+    .aftercare-page > p {
+        font-size: 0.92rem;
+        line-height: 1.45;
+    }
+
+    .aftercare-content {
+        width: min(100% - 24px, 520px);
+        margin-bottom: 48px;
+        gap: 14px;
+    }
+
+    .aftercare-card {
+        border-radius: 22px;
+        padding: 22px 18px;
+        font-size: 0.92rem;
+    }
+
+    .aftercare-card p,
+    .aftercare-card li {
+        font-size: 0.92rem;
+        line-height: 1.45;
+    }
+
+    .aftercare-card h2 {
+        font-size: 1.15rem;
+    }
+}
