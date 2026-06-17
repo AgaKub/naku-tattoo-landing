@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop — Naku Tattoo</title>
+    <meta name="description" content="Posters, prints and art products by Nadia Kubczak / Naku Tattoo. A professional Naku shop is coming soon.">
+
+    <meta property="og:title" content="Shop — Naku Tattoo">
+    <meta property="og:description" content="Posters, prints and art products by Nadia Kubczak are coming soon.">
+
+    <link rel="stylesheet" href="../style.css?v=95">
+    <script src="../cookies.js"></script>
+</head>
+<body>
+    <main class="page-shell">
+        <section class="hero try-on-hero dragon-select-hero designs-hub shop-page">
+            <p class="eyebrow">Naku Shop</p>
+
+            <h1>
+                Shop coming soon
+            </h1>
+
+            <p>
+                Posters, prints and art products by Nadia.
+            </p>
+
+            <p class="guest-spot-description">
+                Nadia’s visual world goes beyond tattoos — soft creatures, playful characters,
+                small stories and colourful details created for skin, paper and everyday spaces.
+            </p>
+
+            <div class="dragon-actions">
+                <a href="../designs.html" class="cta-button" onclick="trackNakuEvent('ShopDesignsClick');">
+                    Explore tattoo designs
+                </a>
+
+                <a href="../index.html" class="secondary-link" onclick="trackNakuEvent('ShopBackHomeClick');">
+                    Back to Naku Tattoo
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        trackNakuEvent("ShopPageView");
+    </script>
+</body>
+</html>

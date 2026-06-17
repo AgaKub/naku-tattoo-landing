@@ -1114,3 +1114,35 @@ docs/OPEN_PATHS.md
 Confirm the active step.
 Keep one active step at a time.
 Put side ideas into backlog.
+
+
+### Checkpoint — Naku Tattoo Landing / Aftercare
+
+Repo: naku-tattoo-landing
+Step completed: Add /aftercare/ page
+
+Completed
+/aftercare/ page created
+aftercare content added
+soft card styling added
+mobile view adjusted
+top breathing space reduced on phone
+final CTA changed from booking pressure to support/return path
+commit pushed
+repo clean
+Final aftercare ending
+When in doubt, do not experiment with random products. Message Nadia and ask.
+
+Buttons:
+
+Back to Naku Tattoo
+Message Nadia for help
+Current repo state
+git status --short
+empty
+Next possible step
+Add /shop/ coming soon
+
+After that:
+
+Update desktop visible navigation + mobile hamburger
