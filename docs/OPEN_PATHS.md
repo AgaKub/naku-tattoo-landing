@@ -201,19 +201,85 @@ After this file is committed:
 3. Return to Meta Ads Test 4 setup.
 
 
-## Shop / Posters — future professional online shop
+## Nadia Online Shop — professional ecommerce and payment infrastructure pilot
 
-Naku Tattoo will include a **Shop** path as part of the website structure.
+Status:
+Active strategic path / next major product direction.
 
-This is not planned as a simple external-link gateway. The direction is to build a full professional online shop for Nadia’s posters and art products.
+Decision:
+The shop will be built as a professional real online shop for Nadia's posters and art products.
 
-Strategic reason:
-- Nadia already sells posters through other online shops.
-- A Naku shop can show Nadia’s wider spectrum as an artist, not only tattoo work.
-- Posters, prints, characters, creatures, and visual stories support the broader Naku/Nadia artist world.
-- Shop can become a serious future product path alongside tattoos, try-on, guest spots, and aftercare.
+This is not:
+- a static catalogue
+- an inquiry-first shop
+- a DM-order flow
+- an external-link gateway only
+- a soft placeholder page as the real solution
 
-Current first step:
-- Add **Shop** to the website navigation.
-- Create a simple `/shop/` coming soon page first.
-- Full e-commerce structure, products, payment, shipping, and platform decisions remain future steps.
+The intended shop flow is:
+
+```text
+product
+-> checkout
+-> online payment
+-> webhook-confirmed paid order
+-> confirmation email
+-> admin order view
+-> fulfillment / shipping workflow
+```
+
+Strategic purpose:
+- create a real professional sales channel for Nadia's posters and art products
+- show Nadia's wider world as an artist, not only tattoo work
+- safely test reliable payment infrastructure before applying similar logic to the Ticketing App
+
+Preferred architecture direction:
+- Django backend
+- Render hosting, likely on a paid plan when payment reliability matters
+- PostgreSQL database
+- payment provider
+- webhook-confirmed orders
+- admin order management
+- confirmation emails
+- basic fulfillment and shipping status
+
+Important connection to Ticketing App:
+The shop should test the shared payment/order infrastructure pattern first.
+
+Shared payment chain:
+
+```text
+Django backend
+-> payment provider
+-> checkout session
+-> webhook confirmation
+-> paid order status
+-> confirmation email
+-> admin record
+```
+
+Ticketing App will later need the same payment reliability plus stricter ticket-specific logic:
+
+```text
+paid order
+-> unique ticket / QR
+-> scanner validation
+-> duplicate-use prevention
+-> gate reliability
+```
+
+Current next step:
+Choose the shop architecture and payment provider direction before coding.
+
+Likely provider comparison:
+- Stripe
+- PayU
+- Przelewy24
+- Tpay
+
+Decision criteria:
+- Polish customer payment habits
+- BLIK availability
+- Django integration quality
+- Render/webhook reliability
+- future Ticketing App reuse

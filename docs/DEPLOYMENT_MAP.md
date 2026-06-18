@@ -1,6 +1,6 @@
 # Naku Tattoo - Deployment Map
 
-Last updated: 2026-06-13
+Last updated: 2026-06-18
 
 ## Purpose
 
@@ -125,6 +125,66 @@ Important rule:
 Render belongs to the booking system.
 Do not assume Render is responsible for the static landing homepage unless this is verified separately.
 ```
+
+---
+
+## 1.3 Future Nadia Online Shop backend
+
+Project status:
+
+```text
+Planned / strategic next product path.
+```
+
+Role:
+
+```text
+Professional ecommerce backend for Nadia's posters and art products.
+Also intended as a lower-risk payment infrastructure pilot before Ticketing App payment work.
+```
+
+Preferred deployment direction:
+
+```text
+Django backend
+Render hosting
+PostgreSQL database
+payment provider integration
+webhook endpoint
+admin order management
+confirmation emails
+```
+
+Important payment rule:
+
+```text
+The frontend must not decide that an order is paid.
+Payment must be confirmed by the payment provider webhook received by the backend.
+Only then should the order be marked as paid.
+```
+
+Expected public structure, to be decided:
+
+```text
+www.nakutattoo.com/shop/
+-> shop entry / brand layer
+
+shop backend / checkout
+-> Django ecommerce backend on Render or dedicated shop subdomain
+```
+
+Possible future shop backend URLs / domains:
+
+```text
+shop.nakutattoo.com
+or
+checkout.nakutattoo.com
+or
+a Render-backed ecommerce service connected from /shop/
+```
+
+Important:
+Do not treat the existing static `/shop/` coming soon page as the final shop architecture. It is only the current placeholder/entry point until the real ecommerce backend is designed and built.
 
 ---
 

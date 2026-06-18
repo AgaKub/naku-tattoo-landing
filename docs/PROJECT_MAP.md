@@ -1,6 +1,6 @@
 # Naku Tattoo - Project Map
 
-Last updated: 2026-06-13
+Last updated: 2026-06-18
 
 ## Purpose
 
@@ -38,6 +38,7 @@ It supports:
 - booking inquiry entry point
 - tracking / Pixel path
 - privacy / cookie messaging
+- shop entry / future connection to Nadia Online Shop
 
 It does not store booking inquiries. Inquiry data belongs to the separate Django booking project: naku-booking-system.
 
@@ -139,7 +140,44 @@ nadiakubczak.com -> designs / try-on / homepage CTA -> booking.nakutattoo.com/in
 
 ---
 
-## 6. Documentation files
+## 6. Nadia Online Shop connection
+
+Strategic decision:
+Nadia Online Shop is now planned as a professional real ecommerce project for Nadia's posters and art products.
+
+It should not be treated as:
+- static catalogue only
+- inquiry / DM ordering
+- external-link gateway only
+
+Role split:
+
+```text
+naku-tattoo-landing
+= public brand layer, navigation, visual entry, shop entry
+
+Nadia Online Shop
+= real ecommerce backend, products, checkout, payment, orders, admin fulfillment
+
+Ticketing App
+= later reuse of payment architecture pattern with additional ticket / QR / scanner reliability
+```
+
+Preferred shop direction:
+- Django backend
+- Render hosting
+- PostgreSQL database
+- payment provider
+- webhook-confirmed orders
+- confirmation emails
+- Django Admin order management
+
+Important:
+The shop may become a separate backend project or service. Do not assume the static landing repo alone can provide professional payment reliability.
+
+---
+
+## 7. Documentation files
 
 Main documentation files:
 - docs/PROJECT_MAP.md
@@ -162,7 +200,7 @@ Use documentation rules:
 
 ---
 
-## 7. Working rules
+## 8. Working rules
 
 Before editing code:
 1. Inspect git status.
@@ -183,7 +221,7 @@ Before Meta Ads destination work:
 
 ---
 
-## 8. Current strategic direction
+## 9. Current strategic direction
 
 Naku Tattoo public flow should support:
 - new-client growth

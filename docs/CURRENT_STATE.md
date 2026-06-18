@@ -1,6 +1,6 @@
 # Naku Tattoo - Current State
 
-Last updated: 2026-06-13
+Last updated: 2026-06-18
 
 ## Current overall status
 
@@ -187,4 +187,36 @@ Book
 About Nadia
 Contact
 
-Shop is included now as a strategic future path. For the first implementation, `/shop/` can be a soft “Coming soon” page while the full professional online shop is planned.
+## Nadia Online Shop direction
+
+Shop is no longer treated as only a future placeholder, external-link gateway, catalogue, inquiry path, or DM-order path.
+
+The strategic decision is to build a professional real online shop for Nadia's posters and art products.
+
+The shop should support reliable online sales:
+
+```text
+product
+-> checkout
+-> online payment
+-> webhook-confirmed paid order
+-> confirmation email
+-> admin order view
+-> fulfillment / shipping workflow
+```
+
+The shop also has a second strategic role: it will act as a lower-risk payment infrastructure pilot before applying similar reliable payment logic to the Ticketing App.
+
+Preferred technical direction:
+
+```text
+Django backend
+Render hosting
+PostgreSQL database
+payment provider
+webhook-confirmed orders
+admin order management
+confirmation emails
+```
+
+The static landing project remains the public brand and entry layer. The real shop backend should be planned as a separate ecommerce/backend path, not as a static HTML-only feature.
