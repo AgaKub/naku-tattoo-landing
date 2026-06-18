@@ -960,10 +960,10 @@ h1 span {
 
 .desktop-nav-links {
     display: flex;
-    pointer-events: auto;
     justify-content: center;
-    gap: 10px;
-    padding: 10px 14px;
+    pointer-events: auto;
+    gap: 24px;
+    padding: 14px 28px;
     border: 1px solid rgba(185, 145, 109, 0.32);
     border-radius: 999px;
     background: rgba(255, 250, 247, 0.82);
@@ -973,10 +973,10 @@ h1 span {
 
 .desktop-nav-links a {
     color: #4a323a;
-    font-size: 0.86rem;
+    font-size: 0.95rem;
     font-weight: 700;
     text-decoration: none;
-    padding: 7px 10px;
+    padding: 8px 12px;
     border-radius: 999px;
 }
 
