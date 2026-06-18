@@ -4,7 +4,7 @@
 
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: Futura, "Futura PT", "Trebuchet MS", Arial, sans-serif;
     background: #fff4f7;
     color: #2b2226;
 }
@@ -185,7 +185,7 @@ h1 span {
 }
 
 .guest-spot {
-    margin-top: 10px;
+    margin-top: 16px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -1452,4 +1452,18 @@ h1 span {
     .aftercare-card h2 {
         font-size: 1.15rem;
     }
+}
+
+body,
+button,
+input,
+textarea,
+select,
+a,
+h1,
+h2,
+h3,
+p,
+span {
+    font-family: Futura, "Futura PT", "Trebuchet MS", Arial, sans-serif;
 }
