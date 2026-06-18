@@ -942,10 +942,10 @@ h1 span {
 
 .site-nav {
     position: fixed;
-    top: 145px;
-    right: calc(50% - 600px);
-    width: 150px;
-    transform: none;
+    top: 18px;
+    left: 50%;
+    width: min(920px, calc(100% - 32px));
+    transform: translateX(-50%);
     z-index: 20;
     pointer-events: none;
 }
@@ -959,29 +959,30 @@ h1 span {
 }
 
 .desktop-nav-links {
-    display: grid;
+    display: flex;
     pointer-events: auto;
-    gap: 24px;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border: 1px solid rgba(185, 145, 109, 0.32);
+    border-radius: 999px;
+    background: rgba(255, 250, 247, 0.82);
+    box-shadow: 0 12px 30px rgba(74, 50, 58, 0.08);
+    backdrop-filter: blur(10px);
 }
 
 .desktop-nav-links a {
-    display: block;
     color: #4a323a;
-    font-size: 0.92rem;
+    font-size: 0.86rem;
     font-weight: 700;
     text-decoration: none;
-    padding: 12px 16px;
-    border: 1px solid rgba(185, 145, 109, 0.32);
-    border-radius: 18px;
-    background: rgba(255, 250, 247, 0.86);
-    box-shadow: 0 10px 24px rgba(74, 50, 58, 0.08);
-    backdrop-filter: blur(10px);
-    text-align: center;
+    padding: 7px 10px;
+    border-radius: 999px;
 }
 
 .desktop-nav-links a:hover {
     color: #d58aa6;
-    background: rgba(255, 255, 255, 0.96);
+    background: rgba(255, 255, 255, 0.6);
 }
 
 .nav-menu {
