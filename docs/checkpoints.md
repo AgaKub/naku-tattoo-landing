@@ -1146,3 +1146,187 @@ Add /shop/ coming soon
 After that:
 
 Update desktop visible navigation + mobile hamburger
+
+
+### Checkpoint — Naku Tattoo Landing / Navigation + Pages
+
+Repo state
+  naku-tattoo-landing
+  repo clean
+  latest work committed + pushed
+
+Completed in this flow
+
+  /aftercare/ page created
+  /shop/ coming soon page created
+  /guest-spots/ coming soon page created
+  homepage navigation updated
+  Guest spots nav now links to /guest-spots/
+  Futura font applied globally
+  desktop top navigation refined
+  mobile hamburger preserved
+  right-side vertical nav rejected and reverted
+  guest spot social-proof idea added to backlog
+
+Current accepted navigation
+
+Desktop:
+
+  Designs | Try-on | Guest spots | Aftercare | Book | Shop
+
+Mobile hamburger:
+
+  Designs
+  Try-on
+  Guest spots
+  Aftercare
+  Book
+  Shop
+
+  Current pages
+    /aftercare/
+    Clear aftercare guide with support-focused ending:
+    Back to Naku Tattoo
+    Message Nadia for help
+
+    /shop/
+      Coming soon page for Nadia’s future professional online shop
+
+    /guest-spots/
+      Coming soon page for guest spot info
+
+Important decisions
+
+  Shop is not just an external link gateway.
+  Shop will become a full professional online shop for Nadia’s posters/art products.
+
+  The shop should show Nadia’s full spectrum as an artist:
+    tattoos
+    posters
+    prints
+    creatures
+    characters
+    visual stories
+    art products
+
+Backlog added
+
+Guest spots section — later improvement:
+add social proof from last guest spot
+photos / healed tattoos / city mood
+soft wording: “Next guest spot info soon.”
+
+
+## Checkpoint — Nadia Online Shop as Real Ecommerce + Payment Infrastructure Pilot
+
+### Date
+
+18 June 2026
+
+### Strategic decision
+
+The Nadia / Naku Tattoo shop will be built as a **professional real online shop**, not as a static catalogue, inquiry page, DM-order path, or external-link gateway.
+
+The shop should allow a customer to:
+
+```text
+choose product
+→ add to cart / start checkout
+→ pay online
+→ receive confirmation
+→ create a real paid order for Nadia to fulfill
+```
+
+### Why this matters
+
+The shop is not only a sales channel for Nadia’s posters/art products. It is also a safer first test case for reliable online payment infrastructure before applying similar payment logic to the Ticketing App.
+
+Nadia’s shop is lower-risk than ticketing because a paid poster order can still be fulfilled, corrected, refunded, or handled manually if something goes wrong. Ticketing is stricter because payment must create valid access, ticket codes, QR logic, scanner validation, and protection against overselling or duplicate entry.
+
+### Shared payment architecture direction
+
+The shop should help us test the core payment chain needed later for ticketing:
+
+```text
+Django backend
+→ Render production hosting
+→ PostgreSQL database
+→ payment provider
+→ checkout session
+→ webhook confirmation
+→ paid order status
+→ confirmation email
+→ admin order view
+```
+
+### Current preferred architecture
+
+```text
+Naku Tattoo Landing
+= brand / entry point / try-on / aftercare / shop entry
+
+Nadia Online Shop
+= real ecommerce backend + products + checkout + payment + orders
+
+Ticketing App
+= later high-reliability payment + tickets + QR/access validation
+```
+
+### MVP definition
+
+The shop MVP means **minimum reliable ecommerce**, not minimum visual page.
+
+Included in MVP:
+
+```text
+products
+prices
+product detail
+cart or checkout flow
+online payment
+payment webhook
+paid order status
+confirmation email
+admin order view
+basic fulfillment status
+basic shipping logic
+```
+
+Not included in first MVP:
+
+```text
+discount codes
+customer accounts
+advanced product variants
+complex international shipping rules
+gift cards
+recommendation engine
+multi-vendor logic
+```
+
+### Strategic conclusion
+
+The Nadia Online Shop should be treated as:
+
+```text
+Professional ecommerce for Nadia
++
+Payment Infrastructure Test Phase 1
+```
+
+The Ticketing App will later become:
+
+```text
+Payment Infrastructure Test Phase 2
++
+ticket generation
++
+QR/access validation
++
+gate reliability
+```
+
+### Current direction
+
+Build the shop as a serious Django/Render/PostgreSQL/payment-provider project, with webhook-confirmed orders.
+Do not treat the shop as static catalogue, inquiry-first selling, DM selling, or external poster-shop gateway.
