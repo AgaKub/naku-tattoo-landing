@@ -1398,3 +1398,247 @@ Django + Render + PostgreSQL + Stripe + webhook-confirmed orders
 
 The old Hostinger/WooCommerce shop is not the active shop path unless a deliberate future decision is made to use it temporarily for speed.
 
+
+## Checkpoint — Nadia Online Shop Django Architecture Map
+
+### Date
+
+19 June 2026
+
+### Context
+
+After confirming that Nadia’s old Hostinger / WordPress / WooCommerce shop was unfinished and never live, the project direction remains to build a new professional Django ecommerce backend.
+
+The existing Stripe account is a useful asset and should be reused if possible. Stripe already shows BLIK enabled and Przelewy24 visible, so Stripe remains the first serious payment provider candidate.
+
+### Architecture decision
+
+The Nadia Online Shop should be built as a separate Django project.
+
+Planned structure:
+
+```text
+Repo: naku-online-shop
+Django project: config
+Main app: shop
+Likely future domain: shop.nakutattoo.com
+```
+
+The static `naku-tattoo-landing` project remains the brand / navigation / visual entry layer.
+The new Django shop backend will handle ecommerce, payments, orders, and fulfillment.
+
+### Core MVP flow
+
+The shop MVP should follow this reliable payment/order chain:
+
+```text
+Product
+-> pending Order
+-> Stripe Checkout
+-> Stripe webhook
+-> Order marked paid
+-> confirmation email
+-> Django Admin fulfillment
+```
+
+### Core payment rule
+
+Only webhook-confirmed payment can mark an order as paid.
+
+The success page / browser redirect must not be treated as proof of payment.
+
+Correct rule:
+
+```text
+Stripe webhook
+-> backend verifies payment event
+-> backend marks order as paid
+```
+
+### Main MVP system blocks
+
+Public customer side:
+
+```text
+Product list
+Product detail
+Checkout start
+Stripe Checkout redirect
+Success page
+Cancelled page
+```
+
+Backend / trusted side:
+
+```text
+Product model
+Order model
+OrderItem model
+PaymentEvent / webhook log
+Stripe checkout session creation
+Stripe webhook handler
+Order paid status update
+Confirmation email
+Django Admin order management
+Fulfillment status
+```
+
+### Initial model direction
+
+Product:
+
+```text
+title
+slug
+description
+image
+price
+currency
+is_active
+stock_quantity
+created_at
+updated_at
+```
+
+Order:
+
+```text
+order_number
+customer_email
+customer_name
+shipping details
+status
+payment_status
+total_amount
+currency
+stripe_checkout_session_id
+stripe_payment_intent_id
+created_at
+paid_at
+fulfilled_at
+```
+
+OrderItem:
+
+```text
+order
+product
+product_title_snapshot
+unit_price
+quantity
+line_total
+```
+
+PaymentEvent:
+
+```text
+order
+provider
+provider_event_id
+event_type
+raw_payload
+processed_at
+created_at
+```
+
+### MVP scope
+
+Included in MVP:
+
+```text
+products
+prices
+single-product checkout or simple cart
+Stripe Checkout
+webhook-confirmed paid orders
+admin order view
+confirmation email
+basic shipping address
+manual fulfillment status
+```
+
+Not included in first MVP:
+
+```text
+customer accounts
+discount codes
+gift cards
+advanced variants
+complex international shipping zones
+tracking numbers
+refund automation
+abandoned checkout emails
+recommendation engine
+```
+
+### Shipping MVP
+
+Start with simple shipping logic:
+
+```text
+Poland shipping first
+one flat shipping price
+manual fulfillment
+```
+
+Later possible extensions:
+
+```text
+international shipping
+shipping zones
+free shipping threshold
+tracking numbers
+InPost / courier integration
+```
+
+### Ticketing App connection
+
+This shop is also Payment Infrastructure Test Phase 1.
+
+Shared payment skeleton useful for Ticketing App later:
+
+```text
+Order
+OrderItem
+PaymentEvent
+Stripe Checkout Session
+Webhook handler
+Paid status update
+Confirmation email
+Admin record
+```
+
+Difference after webhook:
+
+```text
+Shop:
+webhook -> paid order -> fulfillment
+
+Ticketing App:
+webhook -> paid order -> generate ticket / QR -> scanner validation
+```
+
+### Recommended build order
+
+```text
+1. Create new Django repo / project
+2. Add Product model + admin
+3. Add Order + OrderItem models + admin
+4. Add public product list/detail pages
+5. Create pending order
+6. Add Stripe Checkout in test mode
+7. Add Stripe webhook
+8. Mark order paid from webhook
+9. Add confirmation email
+10. Add admin fulfillment status
+```
+
+### Current next step
+
+After this checkpoint is committed, the next active step is to start the new Django shop repository structure:
+
+```text
+naku-online-shop
+```
+
+One step at a time.
