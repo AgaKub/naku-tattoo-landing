@@ -1330,3 +1330,71 @@ gate reliability
 
 Build the shop as a serious Django/Render/PostgreSQL/payment-provider project, with webhook-confirmed orders.
 Do not treat the shop as static catalogue, inquiry-first selling, DM selling, or external poster-shop gateway.
+
+
+## Checkpoint — Existing Hostinger/WooCommerce Shop and Stripe Account Finding
+
+### Date
+
+19 June 2026
+
+### Context
+
+During the Nadia Online Shop planning, we discovered that Aga had previously started building a shop for Nadia on Hostinger using WordPress/WooCommerce.
+
+This setup appears connected to Nadia's existing Stripe account, which explains why Stripe already exists for Nadia and why WooCommerce has access to the Stripe account.
+
+### Finding
+
+The old Hostinger / WordPress / WooCommerce shop was an unfinished previous attempt.
+
+It:
+
+```text
+never went live
+has no real sales activity
+has no useful order history
+should not be treated as the active shop path
+```
+
+The useful asset from this old setup is Nadia's existing Stripe account.
+
+### Stripe account finding
+
+Stripe dashboard inspection showed:
+
+```text
+PLN balance/currency visible
+BLIK enabled
+Cards enabled
+Apple Pay enabled
+Link enabled
+Przelewy24 visible but disabled
+Google Pay visible but disabled
+WooCommerce connection visible
+```
+
+### Strategic interpretation
+
+The existing Hostinger/WooCommerce setup should be treated as historical context and a source of Stripe/account clues, not as the main professional shop architecture.
+
+The current preferred direction remains:
+
+```text
+reuse Nadia's existing Stripe account
+do not continue the unfinished Hostinger shop as the main build
+build the professional shop as a new Django ecommerce backend
+use Stripe webhooks for reliable paid-order confirmation
+keep the payment architecture useful for the future Ticketing App
+```
+
+### Current decision
+
+Nadia Online Shop should continue as:
+
+```text
+Django + Render + PostgreSQL + Stripe + webhook-confirmed orders
+```
+
+The old Hostinger/WooCommerce shop is not the active shop path unless a deliberate future decision is made to use it temporarily for speed.
+
