@@ -1736,3 +1736,117 @@ checkpointing
 After this checkpoint is committed, the next step is to introduce Codex carefully using the backup state above as the restore point.
 
 One step at a time.
+
+
+---
+
+## 2026-06-25 - Nadia identity homepage asset application checkpoint
+
+### Status
+
+Homepage asset changes committed and pushed.
+
+Commit:
+
+```text
+ed0e143 Refine Nadia identity homepage assets
+```
+
+Documentation checkpoint prepared as a follow-up docs-only commit.
+
+### Context
+
+The homepage is being adjusted to follow Nadia's original identity mockup more faithfully, using Nadia's exported assets as artwork rather than redrawing or redesigning them in CSS.
+
+Current active rule:
+
+```text
+Apply Nadia's design as given.
+Do not alter, redraw, stretch, correct, stylize, or reinterpret original assets.
+Use code only for placement and proportional sizing.
+```
+
+### Homepage changes included in commit ed0e143
+
+Changed files:
+
+```text
+index.html
+style.css
+images/nadia-identity/logo-nadia-kubczak.png
+```
+
+New files:
+
+```text
+images/nadia-identity/cart.png
+images/nadia-identity/hey.png
+images/nadia-identity/lupa.png
+```
+
+### What was changed
+
+- Replaced placeholder top-right header symbols with Nadia's real exported icons:
+  - `lupa.png`
+  - `cart.png`
+- Replaced typed `HEY!` with Nadia's exported `hey.png` artwork.
+- Replaced/updated `logo-nadia-kubczak.png` with the newer transparent logo export.
+- Changed the nav bar implementation so `nav-bar.png` is used as an image element rather than a stretched CSS background.
+- Restored the reference nav wording:
+
+```text
+Tattoos / Shop / About me / Contact
+```
+
+### Important remaining issue
+
+The current `nav-bar.png` export is still difficult to apply faithfully because it contains a very large transparent canvas around the pink bar. The safer future export should be:
+
+```text
+nav-bar.png
+transparent PNG
+only the pink scalloped bar shape
+no text
+no grid background
+no browser screenshot
+tight crop with only a small transparent margin
+```
+
+### Docs checkpoint commit and push instructions
+
+Run from:
+
+```text
+C:\Coding\naku-tattoo-landing
+```
+
+Check state:
+
+```powershell
+git status --short
+git diff --stat
+```
+
+Stage this checkpoint:
+
+```powershell
+git add docs/checkpoints.md
+```
+
+Commit:
+
+```powershell
+git commit -m "Document Nadia identity homepage asset checkpoint"
+```
+
+Push:
+
+```powershell
+git push origin main
+```
+
+After push, confirm GitHub Pages/live site once deployment finishes.
+
+### Rule
+
+One step at a time.
