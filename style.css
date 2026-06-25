@@ -1467,3 +1467,246 @@ p,
 span {
     font-family: Futura, "Futura PT", "Trebuchet MS", Arial, sans-serif;
 }
+
+/* Nadia identity homepage */
+
+.nadia-home-page {
+    background: #ffffff;
+    color: #050505;
+    font-family: Futura, "Futura PT", "Trebuchet MS", Arial, sans-serif;
+}
+
+.nadia-home-page main {
+    display: block;
+    width: 100%;
+    min-height: auto;
+    padding: 0;
+}
+
+.nadia-home-hero,
+.nadia-bestsellers {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.nadia-home-header {
+    position: relative;
+    min-height: 320px;
+    padding: 34px 20px 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+.nadia-home-grid {
+    position: absolute;
+    inset: 0;
+    background-image: url("images/nadia-identity/kratka.png");
+    background-size: cover;
+    background-position: center top;
+    z-index: 0;
+}
+
+.nadia-logo-link,
+.nadia-main-nav,
+.nadia-mobile-actions {
+    position: relative;
+    z-index: 1;
+}
+
+.nadia-logo-link {
+    display: block;
+    width: min(330px, 60vw);
+    margin-bottom: 18px;
+}
+
+.nadia-logo {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.nadia-main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 26px;
+    padding: 18px 54px;
+    background-image: url("images/nadia-identity/nav-bar.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.nadia-main-nav a {
+    color: #050505;
+    font-size: clamp(0.8rem, 1.5vw, 1.05rem);
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.nadia-mobile-actions {
+    position: absolute;
+    top: 82px;
+    right: 52px;
+    display: flex;
+    gap: 18px;
+}
+
+.nadia-mobile-actions a {
+    color: #050505;
+    font-size: 1.9rem;
+    font-weight: 900;
+    text-decoration: none;
+    line-height: 1;
+}
+
+.nadia-home-hero {
+    min-height: 720px;
+    padding: 42px 18vw 42px;
+    display: grid;
+    grid-template-columns: minmax(300px, 420px) minmax(300px, 420px);
+    align-items: center;
+    justify-content: center;
+    gap: 72px;
+    background: #ffe2d7;
+}
+
+.nadia-hello h1 {
+    margin: 0 0 28px;
+    font-size: clamp(4.2rem, 9vw, 8rem);
+    line-height: 0.9;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+}
+
+.nadia-hello p {
+    max-width: 430px;
+    margin: 0;
+    font-size: clamp(1.1rem, 2vw, 1.7rem);
+    line-height: 1.55;
+    font-weight: 500;
+}
+
+.nadia-photo-frame {
+    position: relative;
+    width: min(100%, 430px);
+    margin: 0 auto;
+}
+
+.nadia-frame {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.nadia-photo {
+    position: absolute;
+    top: 13%;
+    left: 13%;
+    width: 74%;
+    height: 74%;
+    object-fit: cover;
+}
+
+.nadia-bestsellers {
+    min-height: 460px;
+    padding: 28px 24px 42px;
+    text-align: center;
+    background: #05aa75;
+    box-sizing: border-box;
+}
+
+.nadia-bestsellers h2 {
+    margin: 0 0 20px;
+    font-size: clamp(1.7rem, 3.2vw, 2.5rem);
+    line-height: 1;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+}
+
+.poster-strip {
+    width: min(760px, 72vw);
+    margin: 0 auto;
+    padding: 16px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    background: #fffaf4;
+}
+
+.poster-strip a,
+.poster-strip img {
+    display: block;
+}
+
+.poster-strip img {
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 760px) {
+    .nadia-home-header {
+        min-height: 240px;
+        padding: 36px 14px 24px;
+    }
+
+    .nadia-logo-link {
+        width: min(280px, 72vw);
+        margin-bottom: 12px;
+    }
+
+    .nadia-main-nav {
+        gap: 14px;
+        padding: 14px 28px;
+    }
+
+    .nadia-main-nav a {
+        font-size: 0.68rem;
+        letter-spacing: 0.04em;
+    }
+
+    .nadia-mobile-actions {
+        top: 72px;
+        right: 20px;
+        gap: 12px;
+    }
+
+    .nadia-mobile-actions a {
+        font-size: 1.4rem;
+    }
+
+    .nadia-home-hero {
+        min-height: auto;
+        padding: 42px 24px 52px;
+        grid-template-columns: 1fr;
+        gap: 36px;
+        text-align: left;
+    }
+
+    .nadia-hello h1 {
+        font-size: 4.6rem;
+    }
+
+    .nadia-hello p {
+        font-size: 1.1rem;
+    }
+
+    .nadia-photo-frame {
+        width: min(100%, 330px);
+    }
+
+    .nadia-bestsellers {
+        padding: 34px 16px 52px;
+    }
+
+    .poster-strip {
+        width: min(100%, 520px);
+        padding: 12px;
+        gap: 8px;
+    }
+}
