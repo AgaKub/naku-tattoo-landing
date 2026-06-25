@@ -1642,3 +1642,97 @@ naku-online-shop
 ```
 
 One step at a time.
+
+
+---
+
+## 2026-06-24 — Nadia identity homepage backup before Codex
+
+### Status
+
+Completed and pushed.
+
+### Context
+
+The Naku Tattoo landing project is switching into a more careful implementation workflow for Nadia’s new identity homepage.
+
+The current homepage direction is:
+
+```text
+Nadia Kubczak identity homepage
+→ Tattoos as one main navigation branch
+→ Shop as posters/art products branch
+→ Bestsellers section for posters
+```
+
+---
+
+### Current safe commit
+1a39374 Refine Nadia homepage grid background
+
+This commit is currently on:
+
+main
+origin/main
+
+### Safety backup created
+
+Before introducing Codex into the coding workflow, two backup layers were created.
+
+Git backup branch:
+
+backup/nadia-home-before-codex
+
+Physical folder backup:
+
+C:\Coding\naku-tattoo-landing-BACKUP-before-codex
+
+The physical folder backup was verified with:
+
+Test-Path C:\Coding\naku-tattoo-landing-BACKUP-before-codex
+
+Result:
+
+True
+
+### Working rule restored
+
+For Nadia identity layout work, two strict rules apply:
+
+1. One step at a time only.
+2. Apply Nadia’s designs as given.
+
+This means:
+
+do not bundle changes
+do not predict or jump to next edits
+inspect before editing
+do not redesign Nadia’s assets
+do not correct, stretch, approximate, stylize, or reinterpret her visual files
+if an asset cannot be applied faithfully, stop and identify the asset/export problem instead of faking it with CSS
+
+### Codex introduction plan
+
+Codex may be introduced as a safer coding-editing tool for file changes.
+
+The intended split is:
+
+Codex:
+inspect files
+make one code change
+show diff
+test
+wait for confirmation before commit
+
+ChatGPT:
+strategy
+visual reasoning
+content
+documentation
+checkpointing
+
+### Current next step
+
+After this checkpoint is committed, the next step is to introduce Codex carefully using the backup state above as the restore point.
+
+One step at a time.
