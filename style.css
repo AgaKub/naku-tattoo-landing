@@ -1567,9 +1567,9 @@ span {
 
 .nadia-home-hero {
     min-height: 720px;
-    padding: 42px 18vw 42px;
+    padding: 42px 14vw 42px;
     display: grid;
-    grid-template-columns: minmax(300px, 420px) minmax(300px, 420px);
+    grid-template-columns: minmax(340px, 420px) minmax(340px, 440px);
     align-items: center;
     justify-content: center;
     gap: 72px;
@@ -1594,7 +1594,7 @@ span {
 
 .nadia-photo-frame {
     position: relative;
-    width: min(100%, 430px);
+    width: min(100%, 460px);
     margin: 0 auto;
 }
 
