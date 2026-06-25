@@ -1504,8 +1504,9 @@ span {
     position: absolute;
     inset: 0;
     background-image: url("images/nadia-identity/kratka.png");
-    background-size: cover;
+    background-size: 860px auto;
     background-position: center top;
+    background-repeat: repeat-x;
     z-index: 0;
 }
 
