@@ -1298,6 +1298,10 @@ span {
     margin: auto auto 18px;
 }
 
+.nadia-family-page .designs-hub .dragon-card img {
+    max-width: 150px;
+}
+
 .nadia-home-hero,
 .nadia-bestsellers {
     width: 100%;
@@ -1365,6 +1369,22 @@ span {
     background: #050505;
     color: #ffffff;
     border-color: #050505;
+}
+
+.nadia-family-page .dragon-actions {
+    margin-top: 0;
+    margin-bottom: 28px;
+}
+
+.nadia-family-page .dragon-actions .cta-button {
+    background: transparent;
+    border: 0;
+    color: #050505;
+    padding: 0;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
 }
 
 .nadia-designs-page .secondary-link {
