@@ -1275,6 +1275,29 @@ span {
     padding: 0;
 }
 
+.nadia-designs-page .page-shell {
+    display: flex;
+    justify-content: center;
+    padding: 48px 20px 72px;
+    background: #05aa75;
+}
+
+.nadia-designs-page .designs-hub {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.nadia-designs-page .designs-hub .dragon-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #fffaf7 !important;
+}
+
+.nadia-designs-page .designs-hub .dragon-card img {
+    margin: auto auto 18px;
+}
+
 .nadia-home-hero,
 .nadia-bestsellers {
     width: 100%;
@@ -1319,6 +1342,41 @@ span {
     display: block;
     width: 100%;
     height: auto;
+}
+
+.nadia-designs-logo-text {
+    position: relative;
+    z-index: 1;
+    display: block;
+    color: #050505;
+    font-size: clamp(3.6rem, 7vw, 6.8rem);
+    line-height: 0.9;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-align: center;
+    text-decoration: none;
+}
+
+.nadia-designs-page .nadia-logo-link {
+    text-decoration: none;
+}
+
+.nadia-designs-page .dragon-actions .cta-button {
+    background: #050505;
+    color: #ffffff;
+    border-color: #050505;
+}
+
+.nadia-designs-page .secondary-link {
+    display: inline-block;
+    margin-bottom: 28px;
+    color: #050505;
+    font-family: Futura, "Futura PT", "Trebuchet MS", Arial, sans-serif;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
 }
 
 .nadia-main-nav {
