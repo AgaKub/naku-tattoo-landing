@@ -1510,10 +1510,10 @@ span {
 
 .nadia-photo {
     position: absolute;
-    top: 13%;
-    left: 13%;
-    width: 74%;
-    height: 74%;
+    top: 6.5%;
+    left: 6.5%;
+    width: 87%;
+    height: 87%;
     object-fit: cover;
 }
 
